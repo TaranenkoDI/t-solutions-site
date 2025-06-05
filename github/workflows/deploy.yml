@@ -1,0 +1,22 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and Deploy
+        run: |
+          # Ваши команды сборки проекта
+          npm install
+          npm run build
+          # Команды для деплоя на GitHub Pages
+          git config --global user.name 'TaranenkoDI
+'
+          git config --global user.email 'TaranenkoDica@gmail.com'
+          git add .
+          git commit -m "Deploy"
+          git push origin main
