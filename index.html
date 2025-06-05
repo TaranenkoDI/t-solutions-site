@@ -1,130 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>T Solutions</title>
+  <title>ProfiSales — Повышение прибыли в стиле Apple</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    const translations = {
-      en: {
-        home: "Home",
-        about: "About",
-        cases: "Cases",
-        contact: "Contact",
-        philosophyTitle: "Our Philosophy",
-        philosophyDesc:
-          "We don’t just bring order to your business — we build systems so seamless, they go unnoticed. T Solutions aims to be the benchmark for efficiency and quality. Our approach is a harmony of structure, culture, and results.",
-        formTitle: "Contact Us",
-        name: "Your Name",
-        email: "Your Email",
-        message: "Your Message",
-        submit: "Send Message",
-        assolTitle: "Case: ASSOL",
-        assolDesc: "Developed and implemented a new training system that boosted employee skills and introduced a customer satisfaction system, increasing turnover by up to 30%.",
-        bonnettTitle: "Case: Bonnett Enterprises",
-        bonnettDesc: "Created a service subscription system and new website with an app for client communication. Reduced service time from 3 days to 1.",
-      },
-      fr: {
-        home: "Accueil",
-        about: "À propos",
-        cases: "Études de cas",
-        contact: "Contact",
-        philosophyTitle: "Notre philosophie",
-        philosophyDesc:
-          "Nous ne faisons pas que mettre de l’ordre dans votre entreprise — nous créons des systèmes si fluides qu’on ne les remarque même pas. T Solutions vise à devenir une référence en matière d’efficacité et de qualité. Notre approche repose sur l’harmonie entre structure, culture et résultats.",
-        formTitle: "Contactez-nous",
-        name: "Votre nom",
-        email: "Votre e-mail",
-        message: "Votre message",
-        submit: "Envoyer le message",
-        assolTitle: "Étude de cas : ASSOL",
-        assolDesc: "Mise en place d’un système de formation qui a renforcé les compétences du personnel et augmenté le chiffre d’affaires jusqu’à 30%.",
-        bonnettTitle: "Étude de cas : Bonnett Enterprises",
-        bonnettDesc: "Création d’un système d’abonnement, d’un nouveau site Web et d’une application pour la communication client. Délai de service réduit de 3 jours à 1.",
-      },
-      uk: {
-        home: "Головна",
-        about: "Про нас",
-        cases: "Кейси",
-        contact: "Контакти",
-        philosophyTitle: "Наша філософія",
-        philosophyDesc:
-          "Ми не просто наводимо лад у вашому бізнесі — ми створюємо системи, які працюють настільки злагоджено, що їх не помічають. Мета T Solutions — стати еталоном ефективності та якості. Наш підхід — це гармонія структури, культури та результату.",
-        formTitle: "Зв’язатися з нами",
-        name: "Ваше ім’я",
-        email: "Ваш Email",
-        message: "Ваше повідомлення",
-        submit: "Надіслати повідомлення",
-        assolTitle: "Кейс: ASSOL",
-        assolDesc: "Розроблено нову систему навчання, яка підвищила кваліфікацію працівників, і впроваджено систему оцінки клієнтів, що збільшило дохід на 30%.",
-        bonnettTitle: "Кейс: Bonnett Enterprises",
-        bonnettDesc: "Створено систему підписки на послуги, новий сайт і додаток для зв’язку з клієнтами. Час обслуговування скорочено з 3 днів до 1.",
-      },
-    };
-
-    function setLanguage(lang) {
-      localStorage.setItem("lang", lang);
-      document.querySelectorAll(".lang").forEach((el) => {
-        const key = el.getAttribute("data-key");
-        el.textContent = translations[lang][key];
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = localStorage.getItem("lang") || "en";
-      setLanguage(lang);
-      document.getElementById("languageSelect").value = lang;
-    });
-  </script>
-  <script>
-    function changeLanguage() {
-      const selectedLang = document.getElementById("languageSelect").value;
-      setLanguage(selectedLang);
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fade: 'fadeIn 2s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            }
+          }
+        }
+      }
     }
   </script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .hero-bg {
+      background: linear-gradient(to bottom, #f5f5f7, #ffffff);
+    }
+    .section-title {
+      font-size: 3.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <header class="bg-white shadow p-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">T Solutions</h1>
-    <select id="languageSelect" onchange="changeLanguage()" class="p-2 border rounded">
-      <option value="en">English</option>
-      <option value="fr">Français</option>
-      <option value="uk">Українська</option>
-    </select>
+<body class="bg-white text-gray-900 scroll-smooth">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-semibold">ProfiSales</h1>
+      <nav class="space-x-4 text-sm md:text-base">
+        <a href="#services" class="text-gray-600 hover:text-black">Услуги</a>
+        <a href="#cases" class="text-gray-600 hover:text-black">Кейсы</a>
+        <a href="#contact" class="text-gray-600 hover:text-black">Контакты</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container mx-auto p-6">
-    <section id="cases" class="my-10">
-      <h2 class="text-3xl font-bold mb-4 lang" data-key="cases">Cases</h2>
-      <div class="grid gap-4">
-        <div class="p-4 bg-white rounded shadow">
-          <h3 class="text-xl font-semibold lang" data-key="assolTitle"></h3>
-          <p class="lang" data-key="assolDesc"></p>
+  <!-- Hero Section -->
+  <section class="hero-bg pt-24 pb-16 text-center animate-fade">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title mb-6">Создаем отделы продаж, которые меняют игру</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Мы превращаем бизнес-процессы в мощный инструмент роста прибыли через анализ, обучение и оптимизацию.</p>
+      <a href="#contact" class="inline-block bg-black text-white py-3 px-8 rounded-full hover:bg-gray-800 transition text-lg font-medium">Начать сейчас</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title text-center mb-12">Наши решения</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center p-6 shadow rounded-lg hover:shadow-xl transition">
+          <div class="h-16 w-16 mx-auto mb-4">
+            <!-- Иконка анализа -->
+            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M11 17a4 4 0 100-8 4 4 0 000 8zm-6.6 2a8 8 0 0113.2 0M12 3v4m-6.2 1.8L4 10m16-1.2L17.2 8.8M21 12h-4m-1.8 6.2L16 20M8 20l1.8-1.8" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Аудит продаж</h3>
+          <p class="text-gray-600">Глубокий анализ текущих процессов для выявления точек роста.</p>
         </div>
-        <div class="p-4 bg-white rounded shadow">
-          <h3 class="text-xl font-semibold lang" data-key="bonnettTitle"></h3>
-          <p class="lang" data-key="bonnettDesc"></p>
+        <div class="text-center p-6 shadow rounded-lg hover:shadow-xl transition">
+          <div class="h-16 w-16 mx-auto mb-4">
+            <!-- Иконка обучения -->
+            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path d="M12 14l6.16-3.422A12.083 12.083 0 0121 15.6V19l-9 5-9-5v-3.4a12.083 12.083 0 012.84-5.022L12 14z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Подбор и обучение</h3>
+          <p class="text-gray-600">Формируем команду, закрывающую сделки с высокой конверсией.</p>
+        </div>
+        <div class="text-center p-6 shadow rounded-lg hover:shadow-xl transition">
+          <div class="h-16 w-16 mx-auto mb-4">
+            <!-- Иконка эффективности -->
+            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 10h4v10H3zM17 3h4v17h-4zM10 6h4v14h-4z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Эффективные процессы</h3>
+          <p class="text-gray-600">Оптимизируем бизнес-системы для увеличения прибыли.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="philosophy" class="py-10 bg-white rounded shadow mb-10">
-      <div class="px-6">
-        <h2 class="text-3xl font-bold mb-4 lang" data-key="philosophyTitle"></h2>
-        <p class="text-lg lang" data-key="philosophyDesc"></p>
+  <!-- Cases -->
+  <section id="cases" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title text-center mb-12">Результаты, которые говорят сами за себя</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-2xl font-semibold mb-2">Интернет-магазин электроники</h3>
+          <p class="text-gray-600">Рост выручки на 30% и конверсии на 40% за 6 месяцев.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-2xl font-semibold mb-2">Образовательная платформа</h3>
+          <p class="text-gray-600">Увеличение команды и рост конверсии на 35% за 3 месяца.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-2xl font-semibold mb-2">Компания ASSOL</h3>
+          <p class="text-gray-600">Рост среднего чека на 40%, внедрение системы оценки качества, повышение оборота на 20-30% и создание обучающей системы.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-2xl font-semibold mb-2">Bonnett Enterprises</h3>
+          <p class="text-gray-600">Создание системы бонусов, привлечение клиента с 317 апартаментами, рост чека на 25%, разработка сайта и мобильного приложения.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact" class="my-10">
-      <h2 class="text-3xl font-bold mb-4 lang" data-key="formTitle"></h2>
-      <form class="bg-white p-6 rounded shadow space-y-4">
-        <input type="text" placeholder="Name" class="w-full p-2 border rounded lang" data-key="name" />
-        <input type="email" placeholder="Email" class="w-full p-2 border rounded lang" data-key="email" />
-        <textarea rows="4" placeholder="Message" class="w-full p-2 border rounded lang" data-key="message"></textarea>
-        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded lang" data-key="submit"></button>
+  <!-- Contact Form -->
+  <section id="contact" class="py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="section-title mb-6">Готовы к росту?</h2>
+      <p class="text-xl text-gray-600 max-w-xl mx-auto mb-8">Оставьте заявку, и мы поможем вашему бизнесу выйти на новый уровень.</p>
+      <form action="https://formspree.io/f/your_form_id" method="POST" class="max-w-md mx-auto text-left">
+        <input type="text" name="name" placeholder="Ваше имя" required class="w-full p-3 mb-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black" />
+        <input type="email" name="email" placeholder="Ваш email" required class="w-full p-3 mb-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black" />
+        <textarea name="message" placeholder="Ваше сообщение" required class="w-full p-3 mb-4 rounded-lg border border-gray-300 resize-none focus:ring-2 focus:ring-black h-32"></textarea>
+        <button type="submit" class="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition text-lg font-medium">Отправить</button>
       </form>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-400">&copy; 2025 ProfiSales. Все права защищены.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
