@@ -1,85 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>T Solutions | Crisis Management Consulting</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif']
-            },
-            colors: {
-              primary: '#1A202C',
-              secondary: '#4A5568',
-              accent: '#3182CE'
-            }
-          }
-        }
-      }
-    </script>
-  </head>
-  <body class="bg-white text-primary font-sans">
-    <!-- Language Switcher -->
-    <div class="flex justify-end p-4 text-sm">
-      <button onclick="switchLang('en')" class="mr-2 hover:underline">EN</button>
-      <button onclick="switchLang('fr')" class="hover:underline">FR</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T Solutions – Crisis Management & Consulting Services</title>
+  <meta name="description" content="T Solutions offers expert crisis management and consulting services tailored to help your business thrive in uncertain times. Bilingual support available.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://t-solutions.example.com/" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="T Solutions – Crisis Management & Consulting" />
+  <meta property="og:description" content="T Solutions offers expert crisis management and consulting services tailored to help your business thrive in uncertain times." />
+  <meta property="og:image" content="https://t-solutions.example.com/assets/og-image.jpg" />
+  <meta property="og:url" content="https://t-solutions.example.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="T Solutions – Crisis Management" />
+  <meta name="twitter:description" content="Professional crisis management and consulting." />
+  <meta name="twitter:image" content="https://t-solutions.example.com/assets/og-image.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Hreflang tags -->
+  <link rel="alternate" href="https://t-solutions.example.com/" hreflang="en" />
+  <link rel="alternate" href="https://t-solutions.example.com/fr/" hreflang="fr" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "T Solutions",
+    "url": "https://t-solutions.example.com/",
+    "logo": "https://t-solutions.example.com/assets/logo.png",
+    "sameAs": [],
+    "description": "Crisis management and consulting services to help businesses navigate change effectively.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Winnipeg",
+      "addressRegion": "MB",
+      "addressCountry": "CA"
+    }
+  }
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+      background: #f8f9fa;
+    }
+    header, footer {
+      text-align: center;
+      background: #004085;
+      color: white;
+      padding: 1.5rem 0;
+    }
+    .lang-switcher {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+    }
+    .lang-switcher button {
+      margin-left: 0.5rem;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>T Solutions</h1>
+    <p id="tagline">Crisis Management & Consulting</p>
+    <div class="lang-switcher">
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('fr')">Français</button>
     </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-6" data-en="Crisis Management Solutions" data-fr="Solutions de gestion de crise">
-        Crisis Management Solutions
-      </h1>
-      <p class="text-lg sm:text-xl max-w-2xl" data-en="We help companies handle tough times with clarity and confidence." data-fr="Nous aidons les entreprises à traverser les moments difficiles avec clarté et confiance.">
-        We help companies handle tough times with clarity and confidence.
-      </p>
+  <main>
+    <section id="content-en">
+      <h2>Welcome to T Solutions</h2>
+      <p>We provide expert crisis management and business consulting services. Our mission is to support your business through challenges and help it grow stronger.</p>
+      <p>Whether you're facing operational disruption, reputational damage, or need strategic advice — we're here for you.</p>
     </section>
 
-    <!-- Services Section -->
-    <section class="bg-gray-50 py-16 px-6">
-      <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl font-semibold mb-8" data-en="Our Services" data-fr="Nos services">Our Services</h2>
-        <div class="grid md:grid-cols-3 gap-10">
-          <div class="p-6 rounded-xl shadow-md bg-white">
-            <h3 class="text-xl font-bold mb-2" data-en="Business Turnaround" data-fr="Redressement d'entreprise">Business Turnaround</h3>
-            <p data-en="Rapid diagnostics and execution to stabilize operations." data-fr="Diagnostics rapides et exécution pour stabiliser les opérations.">
-              Rapid diagnostics and execution to stabilize operations.
-            </p>
-          </div>
-          <div class="p-6 rounded-xl shadow-md bg-white">
-            <h3 class="text-xl font-bold mb-2" data-en="Restructuring" data-fr="Restructuration">Restructuring</h3>
-            <p data-en="Strategic planning for debt, staff, and structure." data-fr="Planification stratégique pour la dette, le personnel et la structure.">
-              Strategic planning for debt, staff, and structure.
-            </p>
-          </div>
-          <div class="p-6 rounded-xl shadow-md bg-white">
-            <h3 class="text-xl font-bold mb-2" data-en="Leadership Coaching" data-fr="Coaching de leadership">Leadership Coaching</h3>
-            <p data-en="Empowering managers during difficult transitions." data-fr="Renforcement des dirigeants en période de transition.">
-              Empowering managers during difficult transitions.
-            </p>
-          </div>
-        </div>
-      </div>
+    <section id="content-fr" style="display:none">
+      <h2>Bienvenue chez T Solutions</h2>
+      <p>Nous offrons des services experts en gestion de crise et en conseil aux entreprises. Notre mission est de vous accompagner à travers les défis et de renforcer votre entreprise.</p>
+      <p>Que vous fassiez face à une perturbation opérationnelle, un dommage à la réputation, ou ayez besoin de conseils stratégiques — nous sommes là pour vous.</p>
     </section>
+  </main>
 
-    <!-- Contact CTA -->
-    <section class="bg-accent text-white py-12 text-center">
-      <h2 class="text-3xl font-semibold mb-4" data-en="Need urgent help?" data-fr="Besoin d'aide urgente ?">Need urgent help?</h2>
-      <p class="mb-6" data-en="Let’s discuss how we can support your business." data-fr="Discutons de la façon dont nous pouvons soutenir votre entreprise.">Let’s discuss how we can support your business.</p>
-      <a href="mailto:contact@tsolutions.ca" class="bg-white text-accent px-6 py-3 font-bold rounded-full hover:bg-gray-100">Email Us</a>
-    </section>
+  <footer>
+    <p>© 2025 T Solutions. All rights reserved.</p>
+  </footer>
 
-    <script>
-      function switchLang(lang) {
-        document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-          el.textContent = el.getAttribute('data-' + lang);
-        });
-      }
-    </script>
-  </body>
+  <script>
+    function setLang(lang) {
+      document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+      document.getElementById('content-fr').style.display = lang === 'fr' ? 'block' : 'none';
+      document.getElementById('tagline').textContent = lang === 'en'
+        ? 'Crisis Management & Consulting'
+        : 'Gestion de crise et conseil';
+    }
+  </script>
+</body>
 </html>
