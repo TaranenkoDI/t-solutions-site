@@ -3,76 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="T Solutions — tailor-made business training with real results. Avoid vague promises. Embrace strategy and precision." />
-  <meta name="keywords" content="business training, consulting, team development, leadership, T Solutions" />
+  <meta name="description" content="T Solutions – Tailored training & consulting. No templates. Just results." />
+  <meta name="keywords" content="training, consulting, leadership, soft skills, evaluation, follow-up" />
   <meta name="author" content="T Solutions" />
+  <title>T Solutions</title>
   <link rel="icon" type="image/png" href="favicon.png" />
-  <title>T Solutions — Beyond Buzzwords</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #fff; color: #111; line-height: 1.6; }
-    header, section, footer { padding: 3rem 1.5rem; max-width: 960px; margin: auto; }
-    header { text-align: center; }
-    h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-    h2 { font-size: 1.75rem; margin: 2rem 0 1rem; }
-    p { margin-bottom: 1rem; }
-    .cta { background: #000; color: #fff; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; display: inline-block; margin-top: 1rem; }
-    form { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-    input, textarea { padding: 0.75rem; border: 1px solid #ccc; border-radius: 6px; }
-    button { background: #000; color: #fff; padding: 0.75rem; border: none; border-radius: 6px; cursor: pointer; }
-    .lang-toggle { position: fixed; top: 1rem; right: 1rem; }
-  </style>
-  <script>
-    function toggleLang() {
-      const lang = document.documentElement.lang;
-      document.documentElement.lang = lang === 'en' ? 'fr' : 'en';
-      location.reload();
-    }
-  </script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
-  <div class="lang-toggle">
-    <button onclick="toggleLang()">Français / English</button>
-  </div>
-  <header>
-    <h1>T Solutions</h1>
-    <p>“We don’t offer magic. We offer what works.”</p>
-    <a href="#contact" class="cta">Get in touch</a>
+  <header class="hero">
+    <nav>
+      <h1 class="logo">T Solutions</h1>
+      <div class="lang-toggle">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('fr')">FR</button>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h2 class="fade-in">No magic. Just measurable results.</h2>
+      <p class="fade-in delay">If your contractor claims to have a "ready solution for everyone" before even listening — run.</p>
+      <a href="#contact" class="cta-button">Get in touch</a>
+    </div>
   </header>
 
-  <section>
-    <h2>Stop the Training Theater</h2>
-    <p>If your training partner promises results before asking for a brief — that's a red flag.</p>
-    <p>Generic programs don’t fit unique teams. We start with context, objectives, and measurable KPIs — not vague slogans.</p>
+  <section class="philosophy">
+    <h3>Our Philosophy</h3>
+    <p><strong>No templates.</strong> We don't offer vague slogans like "we'll improve leadership". We ask questions, understand the business context, and build relevant programs from scratch.</p>
+    <p><strong>Measure it.</strong> Clear KPIs, feedback loops, pre- and post-evaluations. If you can't measure it — it didn't happen.</p>
+    <p><strong>Aftercare matters.</strong> True transformation happens *after* the training. That's why we provide follow-ups, mentoring, and real-life case application.</p>
   </section>
 
-  <section>
-    <h2>What Makes Us Different</h2>
-    <p>🔍 No buzzwords. Just clear logic, proven tools, follow-ups, and performance evaluation.</p>
-    <p>🧠 We don't promise 3-minute personality reads or 100x income. We build durable skills for real teams.</p>
-    <p>📊 Our trainings include preparation, post-support, and transparent pricing (no “who does what” surprises).</p>
+  <section class="testimonials">
+    <h3>What clients say</h3>
+    <div class="testimonial-card">
+      <p>“Finally a training that wasn’t just ‘feel-good’. We had action points, and they followed up.”</p>
+      <span>- Marie, HR Director</span>
+    </div>
+    <div class="testimonial-card">
+      <p>“After one session, our team communication started to actually work. No generic tips — just what we needed.”</p>
+      <span>- Alex, Project Lead</span>
+    </div>
   </section>
 
-  <section>
-    <h2>Philosophy</h2>
-    <p>Training without implementation is like a gym membership without workouts. We help you activate your knowledge inside real workflows.</p>
-    <p>Your expectations and our role should be clear from day one.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
+  <section id="contact" class="contact">
+    <h3>Let’s talk</h3>
+    <form action="https://formspree.io/f/yourformid" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
-    <p>Or write to us on <a href="https://t.me/yourtelegram" target="_blank">Telegram</a></p>
+    <p>Or write us on <a href="https://t.me/yourhandle" target="_blank">Telegram</a>.</p>
   </section>
 
   <footer>
     <p>&copy; 2025 T Solutions. All rights reserved.</p>
   </footer>
+
+  <script>
+    function setLang(lang) {
+      // Future implementation of language switching logic
+      alert(`Language switched to ${lang}`);
+    }
+  </script>
 </body>
 </html>
