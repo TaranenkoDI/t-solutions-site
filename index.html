@@ -1,140 +1,149 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProfiSales - Повышение прибыли в стиле Apple</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProfiSales — Повышение прибыли в стиле Apple</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fade: 'fadeIn 2s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            }
+          }
         }
-        .hero-bg {
-            background: linear-gradient(to bottom, #f5f5f7, #ffffff);
-        }
-        .section-title {
-            font-size: 3.5rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-        }
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-    </style>
-    <script>
-        // Save language preference
-        function setLanguage(lang) {
-            localStorage.setItem('preferredLang', lang);
-            document.documentElement.lang = lang;
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
-            });
-        }
-
-        // Apply saved language on load
-        document.addEventListener('DOMContentLoaded', () => {
-            const preferredLang = localStorage.getItem('preferredLang') || 'ru';
-            setLanguage(preferredLang);
-            document.getElementById('lang-selector').value = preferredLang;
-        });
-    </script>
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .hero-bg {
+      background: linear-gradient(to bottom, #f5f5f7, #ffffff);
+    }
+    .section-title {
+      font-size: 3.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900 smooth-scroll">
-    <!-- Language Switcher -->
-    <div class="fixed top-4 right-4 z-50">
-        <select id="lang-selector" onchange="setLanguage(this.value)" class="p-2 border rounded">
-            <option value="ru">Русский</option>
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-        </select>
+<body class="bg-white text-gray-900 scroll-smooth">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-semibold">ProfiSales</h1>
+      <nav class="space-x-4 text-sm md:text-base">
+        <a href="#services" class="text-gray-600 hover:text-black">Услуги</a>
+        <a href="#cases" class="text-gray-600 hover:text-black">Кейсы</a>
+        <a href="#contact" class="text-gray-600 hover:text-black">Контакты</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Header -->
-    <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-10">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-semibold">ProfiSales</h1>
-            <nav>
-                <a href="#services" class="text-gray-600 hover:text-gray-900 mx-4" data-lang="ru">Услуги</a>
-                <a href="#cases" class="text-gray-600 hover:text-gray-900 mx-4" data-lang="ru">Кейсы</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-900 mx-4" data-lang="ru">Контакты</a>
+  <!-- Hero Section -->
+  <section class="hero-bg pt-24 pb-16 text-center animate-fade">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title mb-6">Создаем отделы продаж, которые меняют игру</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Мы превращаем бизнес-процессы в мощный инструмент роста прибыли через анализ, обучение и оптимизацию.</p>
+      <a href="#contact" class="inline-block bg-black text-white py-3 px-8 rounded-full hover:bg-gray-800 transition text-lg font-medium">Начать сейчас</a>
+    </div>
+  </section>
 
-                <a href="#services" class="text-gray-600 hover:text-gray-900 mx-4" data-lang="en">Services</a>
-                <a href="#cases" class="text-gray-600 hover:text-gray-900 mx-4" data-lang="en">Cases</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-900 mx-4" data-lang="en">Contact</a>
-
-                <a href="#services" class="text-gray-600 hover:text-gray-900 mx-4" data-lang="fr">Services</a>
-                <a href="#cases" class="text-gray-600 hover:text-gray-900 mx-4" data-lang="fr">Cas</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-900 mx-4" data-lang="fr">Contact</a>
-            </nav>
+  <!-- Services -->
+  <section id="services" class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title text-center mb-12">Наши решения</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center p-6 shadow rounded-lg hover:shadow-xl transition">
+          <div class="h-16 w-16 mx-auto mb-4">
+            <!-- Иконка анализа -->
+            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M11 17a4 4 0 100-8 4 4 0 000 8zm-6.6 2a8 8 0 0113.2 0M12 3v4m-6.2 1.8L4 10m16-1.2L17.2 8.8M21 12h-4m-1.8 6.2L16 20M8 20l1.8-1.8" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Аудит продаж</h3>
+          <p class="text-gray-600">Глубокий анализ текущих процессов для выявления точек роста.</p>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-bg pt-24 pb-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="section-title text-gray-900 mb-6" data-lang="ru">Создаем отделы продаж, которые меняют игру</h2>
-            <h2 class="section-title text-gray-900 mb-6" data-lang="en">We build sales departments that change the game</h2>
-            <h2 class="section-title text-gray-900 mb-6" data-lang="fr">Nous créons des départements de vente qui changent la donne</h2>
-
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8" data-lang="ru">Мы превращаем бизнес-процессы в инструмент роста прибыли через анализ, оптимизацию и обучение.</p>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8" data-lang="en">We turn business processes into profit-growing tools through analysis, optimization, and training.</p>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8" data-lang="fr">Nous transformons les processus commerciaux en outils de croissance des bénéfices grâce à l'analyse, l'optimisation et la formation.</p>
-
-            <a href="#contact" class="inline-block bg-black text-white py-3 px-8 rounded-full hover:bg-gray-800 transition text-lg font-medium" data-lang="ru">Начать сейчас</a>
-            <a href="#contact" class="inline-block bg-black text-white py-3 px-8 rounded-full hover:bg-gray-800 transition text-lg font-medium" data-lang="en">Start Now</a>
-            <a href="#contact" class="inline-block bg-black text-white py-3 px-8 rounded-full hover:bg-gray-800 transition text-lg font-medium" data-lang="fr">Commencer maintenant</a>
+        <div class="text-center p-6 shadow rounded-lg hover:shadow-xl transition">
+          <div class="h-16 w-16 mx-auto mb-4">
+            <!-- Иконка обучения -->
+            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path d="M12 14l6.16-3.422A12.083 12.083 0 0121 15.6V19l-9 5-9-5v-3.4a12.083 12.083 0 012.84-5.022L12 14z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Подбор и обучение</h3>
+          <p class="text-gray-600">Формируем команду, закрывающую сделки с высокой конверсией.</p>
         </div>
-    </section>
-
-    <!-- Services Section (only RU shown here for brevity, repeat for EN/FR with data-lang) -->
-    <section id="services" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-center mb-12" data-lang="ru">Наши решения</h2>
-            <h2 class="section-title text-center mb-12" data-lang="en">Our Solutions</h2>
-            <h2 class="section-title text-center mb-12" data-lang="fr">Nos solutions</h2>
-            <!-- Repeat each card with translated content -->
+        <div class="text-center p-6 shadow rounded-lg hover:shadow-xl transition">
+          <div class="h-16 w-16 mx-auto mb-4">
+            <!-- Иконка эффективности -->
+            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 10h4v10H3zM17 3h4v17h-4zM10 6h4v14h-4z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Эффективные процессы</h3>
+          <p class="text-gray-600">Оптимизируем бизнес-системы для увеличения прибыли.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Cases Section -->
-    <section id="cases" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title text-center mb-12" data-lang="ru">Результаты, которые говорят сами за себя</h2>
-            <h2 class="section-title text-center mb-12" data-lang="en">Results That Speak for Themselves</h2>
-            <h2 class="section-title text-center mb-12" data-lang="fr">Des résultats qui parlent d'eux-mêmes</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Assol Case -->
-                <div class="bg-white rounded-xl shadow-lg p-8" data-lang="ru">
-                    <h3 class="text-2xl font-semibold mb-4">Компания ASSOL</h3>
-                    <p class="text-gray-600">Увеличение среднего чека на 40%, рост обслуживаемых клиентов более чем в 2 раза и рост оборота до 30%. Разработаны системы обучения и оценки удовлетворенности клиентов.</p>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-8" data-lang="en">
-                    <h3 class="text-2xl font-semibold mb-4">ASSOL Company</h3>
-                    <p class="text-gray-600">Increased average check by 40%, more than doubled the number of served clients, and boosted revenue up to 30%. Developed training systems and customer satisfaction evaluation methods.</p>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-8" data-lang="fr">
-                    <h3 class="text-2xl font-semibold mb-4">Société ASSOL</h3>
-                    <p class="text-gray-600">Augmentation du panier moyen de 40 %, doublement du nombre de clients servis et croissance du chiffre d'affaires jusqu'à 30 %. Développement de systèmes de formation et d'évaluation de la satisfaction client.</p>
-                </div>
-
-                <!-- Bonnett Case -->
-                <div class="bg-white rounded-xl shadow-lg p-8" data-lang="ru">
-                    <h3 class="text-2xl font-semibold mb-4">Bonnett Enterprises</h3>
-                    <p class="text-gray-600">Создана система бонусов и подписки, рост среднего чека на 25%, привлечение крупной управляющей компании (317 квартир), сокращение времени обработки заявок с 3 дней до 1 дня.</p>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-8" data-lang="en">
-                    <h3 class="text-2xl font-semibold mb-4">Bonnett Enterprises</h3>
-                    <p class="text-gray-600">Implemented bonus and subscription systems, increased average check by 25%, attracted a major property management company (317 suites), reduced service request processing time from 3 days to 1 day.</p>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-8" data-lang="fr">
-                    <h3 class="text-2xl font-semibold mb-4">Bonnett Enterprises</h3>
-                    <p class="text-gray-600">Mise en place de systèmes de bonus et d'abonnement, augmentation du panier moyen de 25 %, acquisition d'une grande société de gestion immobilière (317 logements), réduction du délai de traitement des demandes de 3 jours à 1 jour.</p>
-                </div>
-            </div>
+  <!-- Cases -->
+  <section id="cases" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title text-center mb-12">Результаты, которые говорят сами за себя</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-2xl font-semibold mb-2">Интернет-магазин электроники</h3>
+          <p class="text-gray-600">Рост выручки на 30% и конверсии на 40% за 6 месяцев.</p>
         </div>
-    </section>
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-2xl font-semibold mb-2">Образовательная платформа</h3>
+          <p class="text-gray-600">Увеличение команды и рост конверсии на 35% за 3 месяца.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-2xl font-semibold mb-2">Компания ASSOL</h3>
+          <p class="text-gray-600">Рост среднего чека на 40%, внедрение системы оценки качества, повышение оборота на 20-30% и создание обучающей системы.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-2xl font-semibold mb-2">Bonnett Enterprises</h3>
+          <p class="text-gray-600">Создание системы бонусов, привлечение клиента с 317 апартаментами, рост чека на 25%, разработка сайта и мобильного приложения.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section and Footer would also be translated similarly -->
+  <!-- Contact Form -->
+  <section id="contact" class="py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="section-title mb-6">Готовы к росту?</h2>
+      <p class="text-xl text-gray-600 max-w-xl mx-auto mb-8">Оставьте заявку, и мы поможем вашему бизнесу выйти на новый уровень.</p>
+      <form action="https://formspree.io/f/your_form_id" method="POST" class="max-w-md mx-auto text-left">
+        <input type="text" name="name" placeholder="Ваше имя" required class="w-full p-3 mb-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black" />
+        <input type="email" name="email" placeholder="Ваш email" required class="w-full p-3 mb-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black" />
+        <textarea name="message" placeholder="Ваше сообщение" required class="w-full p-3 mb-4 rounded-lg border border-gray-300 resize-none focus:ring-2 focus:ring-black h-32"></textarea>
+        <button type="submit" class="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition text-lg font-medium">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-400">&copy; 2025 ProfiSales. Все права защищены.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
