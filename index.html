@@ -4,190 +4,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="T-Solutions помогает бизнесу увеличить прибыль через аудит, обучение и оптимизацию процессов продаж." />
-  <meta property="og:title" content="T-Solutions — Повышение прибыли в стиле Apple" />
-  <meta property="og:description" content="Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!" />
+  <meta name="description" data-i18n-meta="meta-description" content="T-Solutions помогает бизнесу увеличить прибыль через аудит, обучение и оптимизацию процессов продаж." />
+  <meta property="og:title" data-i18n-meta="og-title" content="T-Solutions — Повышение прибыли в стиле Apple" />
+  <meta property="og:description" data-i18n-meta="og-description" content="Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta property="og:url" data-i18n-meta="og-url" content="https://yourwebsite.com" />
   <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="T-Solutions — Повышение прибыли в стиле Apple" />
-  <meta name="twitter:description" content="Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!" />
+  <meta name="twitter:title" data-i18n-meta="twitter-title" content="T-Solutions — Повышение прибыли в стиле Apple" />
+  <meta name="twitter:description" data-i18n-meta="twitter-description" content="Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!" />
   <meta name="twitter:image" content="https://yourwebsite.com/og-image.jpg" />
+  <link rel="alternate" hreflang="ru" href="https://yourwebsite.com" />
+  <link rel="alternate" hreflang="en" href="https://yourwebsite.com/en" />
+  <link rel="alternate" hreflang="fr" href="https://yourwebsite.com/fr" />
+  <link rel="alternate" hreflang="x-default" href="https://yourwebsite.com" />
   <title data-i18n="title">T-Solutions — Повышение прибыли в стиле Apple</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          animation: {
-            fade: 'fadeIn 2s ease-in-out',
-          },
-          keyframes: {
-            fadeIn: {
-              '0%': { opacity: 0 },
-              '100%': { opacity: 1 },
-            }
-          }
-        }
-      }
-    }
-  </script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      overflow-x: hidden;
     }
-    #language-switcher {
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://source.unsplash.com/random/1600x900?business');
+    }
+    #hamburger-menu {
+      display: none;
+    }
+    .hamburger-line {
       transition: all 0.3s ease;
     }
-    #language-switcher:focus {
-      outline: none;
-      ring: 2px solid #000;
+    .hamburger.open .line-1 {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.open .line-2 {
+      opacity: 0;
+    }
+    .hamburger.open .line-3 {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+    @media (max-width: 640px) {
+      #nav-links, #lang-buttons {
+        display: none;
+      }
+      #hamburger-menu {
+        display: block;
+      }
+      #nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 1rem;
+        z-index: 40;
+        animation: menuOpen 0.3s ease-out;
+      }
+      #lang-buttons.active {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+    }
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    [data-animate].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes menuOpen {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-<body class="bg-white text-gray-900 scroll-smooth">
+<body class="bg-white text-gray-900">
 
   <!-- Header -->
-  <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-10">
+  <header class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
     <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
       <h1 class="text-xl sm:text-2xl font-semibold">T-Solutions</h1>
-      <div class="flex items-center space-x-2 sm:space-x-4">
-        <nav aria-label="Основная навигация" class="flex space-x-2 sm:space-x-4 text-xs sm:text-sm">
+      <div class="flex items-center">
+        <nav id="nav-links" aria-label="Основная навигация" class="flex space-x-4 text-sm sm:text-base">
           <a href="#services" class="text-gray-700 hover:text-black transition-all" data-i18n="nav-services">Услуги</a>
           <a href="#cases" class="text-gray-700 hover:text-black transition-all" data-i18n="nav-cases">Кейсы</a>
           <a href="#philosophy" class="text-gray-700 hover:text-black transition-all" data-i18n="nav-philosophy">Философия</a>
           <a href="#contact" class="text-gray-700 hover:text-black transition-all" data-i18n="nav-contact">Контакты</a>
         </nav>
-        <select id="language-switcher" aria-label="Выберите язык" class="border border-gray-300 rounded-md px-2 py-1 text-xs sm:text-sm bg-white focus:ring-2 focus:ring-black">
-          <option value="ru">Русский</option>
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-        </select>
+        <div id="lang-buttons" class="ml-4 flex space-x-2 sm:space-x-4">
+          <button data-lang="ru" class="text-sm sm:text-base text-gray-700 hover:text-black transition-all px-2 py-1 rounded-md bg-gray-100 hover:bg-gray-200">Русский</button>
+          <button data-lang="en" class="text-sm sm:text-base text-gray-700 hover:text-black transition-all px-2 py-1 rounded-md bg-gray-100 hover:bg-gray-200">English</button>
+          <button data-lang="fr" class="text-sm sm:text-base text-gray-700 hover:text-black transition-all px-2 py-1 rounded-md bg-gray-100 hover:bg-gray-200">Français</button>
+        </div>
+        <button id="hamburger-menu" class="ml-4 sm:hidden text-gray-700 focus:outline-none hamburger" aria-label="Открыть меню">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path class="hamburger-line line-1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" />
+            <path class="hamburger-line line-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+            <path class="hamburger-line line-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+          </svg>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-b from-gray-100 to-white pt-20 sm:pt-24 pb-12 text-center animate-fade">
-    <div class="container mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4 sm:mb-6" data-i18n="hero-title">Создаем отделы продаж, которые меняют игру</h2>
-      <p class="text-base sm:text-lg text-gray-700 max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-8" data-i18n="hero-description">Мы превращаем бизнес-процессы в мощный инструмент роста прибыли через анализ, обучение и оптимизацию.</p>
-      <a href="#contact" class="inline-block bg-black text-white py-2 sm:py-3 px-6 sm:px-8 rounded-full hover:bg-gray-800 transition-all text-base sm:text-lg font-medium" data-i18n="hero-cta">Начать сейчас</a>
+  <section class="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-16 sm:pt-20 pb-12 text-center parallax-bg" data-animate>
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight mb-4 sm:mb-6" data-i18n="hero-title">Создаем отделы продаж, которые меняют игру</h2>
+      <p class="text-base sm:text-lg text-gray-600 max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-8" data-i18n="hero-description">Мы превращаем бизнес-процессы в мощный инструмент роста прибыли через анализ, обучение и оптимизацию.</p>
+      <a href="#contact" class="inline-block bg-black text-white py-2 sm:py-3 px-6 sm:px-8 rounded-full hover:bg-gray-900 hover:scale-105 transition-all text-base sm:text-lg font-medium" data-i18n="hero-cta">Начать сейчас</a>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-12 sm:py-16">
-    <div class="container mx-auto px-4 sm:px-6">
+  <section id="services" class="py-8 sm:py-12 border-b border-gray-100" data-animate>
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-8 sm:mb-12" data-i18n="services-title">Наши решения</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-        <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all">
-          <div class="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4">
-            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all z-10" data-animate style="transition-delay: 0.1s;">
+          <div class="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4">
+            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
               <title>Анализ продаж</title>
               <path d="M11 17a4 4 0 100-8 4 4 0 000 8zm-6.6 2a8 8 0 0113.2 0M12 3v4m-6.2 1.8L4 10m16-1.2L17.2 8.8M21 12h-4m-1.8 6.2L16 20M8 20l1.8-1.8" />
             </svg>
           </div>
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="service-audit-title">Аудит продаж</h3>
-          <p class="text-gray-700 text-base sm:text-lg" data-i18n="service-audit-description">Глубокий анализ текущих процессов для выявления точек роста.</p>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="service-audit-description">Глубокий анализ текущих процессов для выявления точек роста.</p>
         </div>
-        <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all">
-          <div class="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4">
-            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all z-10" data-animate style="transition-delay: 0.2s;">
+          <div class="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4">
+            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
               <title>Подбор и обучение</title>
               <path d="M12 14l9-5-9-5-9 5 9 5z" />
               <path d="M12 14l6.16-3.422A12.083 12.083 0 0121 15.6V19l-9 5-9-5v-3.4a12.083 12.083 0 012.84-5.022L12 14z" />
             </svg>
           </div>
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="service-training-title">Подбор и обучение</h3>
-          <p class="text-gray-700 text-base sm:text-lg" data-i18n="service-training-description">Формируем команду, закрывающую сделки с высокой конверсией.</p>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="service-training-description">Формируем команду, закрывающую сделки с высокой конверсией.</p>
         </div>
-        <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-all">
-          <div class="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4">
-            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all z-10" data-animate style="transition-delay: 0.3s;">
+          <div class="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4">
+            <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
               <title>Эффективные процессы</title>
               <path d="M3 10h4v10H3zM17 3h4v17h-4zM10 6h4v14h-4z" />
             </svg>
           </div>
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="service-processes-title">Эффективные процессы</h3>
-          <p class="text-gray-700 text-base sm:text-lg" data-i18n="service-processes-description">Оптимизируем бизнес-системы для увеличения прибыли.</p>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="service-processes-description">Оптимизируем бизнес-системы для увеличения прибыли.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Cases -->
-  <section id="cases" class="py-12 sm:py-16 bg-gray-50">
-    <div class="container mx-auto px-4 sm:px-6">
+  <section id="cases" class="py-8 sm:py-12 bg-gray-50" data-animate>
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-8 sm:mb-12" data-i18n="cases-title">Результаты, которые говорят сами за себя</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-        <div class="bg-white rounded-lg shadow-md p-6 flex items-start">
-          <div>
-            <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-electronics-title">Интернет-магазин электроники</h3>
-            <p class="text-gray-700 text-base sm:text-lg" data-i18n="case-electronics-description">Рост выручки на 30% и конверсии на 40% за 6 месяцев.</p>
-          </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:scale-105 transition-all z-10" data-animate style="transition-delay: 0.1s;">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-electronics-title">Интернет-магазин электроники</h3>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-electronics-description">Рост выручки на 30% и конверсии на 40% за 6 месяцев.</p>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6 flex items-start">
-          <div>
-            <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-education-title">Образовательная платформа</h3>
-            <p class="text-gray-700 text-base sm:text-lg" data-i18n="case-education-description">Увеличение команды и рост конверсии на 35% за 3 месяца.</p>
-          </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:scale-105 transition-all z-10" data-animate style="transition-delay: 0.2s;">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-education-title">Образовательная платформа</h3>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-education-description">Увеличение команды и рост конверсии на 35% за 3 месяца.</p>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6 flex items-start">
-          <div>
-            <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-assol-title">Компания ASSOL</h3>
-            <p class="text-gray-700 text-base sm:text-lg" data-i18n="case-assol-description">Рост среднего чека на 40%, внедрение системы оценки качества, повышение оборота на 20-30% и создание обучающей системы.</p>
-          </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:scale-105 transition-all z-10" data-animate style="transition-delay: 0.3s;">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-assol-title">Компания ASSOL</h3>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-assol-description">Рост среднего чека на 40%, внедрение системы оценки качества, повышение оборота на 20-30% и создание обучающей системы.</p>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6 flex items-start">
-          <div>
-            <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-bonnett-title">Bonnett Enterprises</h3>
-            <p class="text-gray-700 text-base sm:text-lg" data-i18n="case-bonnett-description">Создание системы бонусов, привлечение клиента с 317 апартаментами, рост чека на 25%, разработка сайта и мобильного приложения.</p>
-          </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:scale-105 transition-all z-10" data-animate style="transition-delay: 0.4s;">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-bonnett-title">Bonnett Enterprises</h3>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-bonnett-description">Создание системы бонусов, привлечение клиента с 317 апартаментами, рост чека на 25%, разработка сайта и мобильного приложения.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Philosophy -->
-  <section id="philosophy" class="py-12 sm:py-16 bg-gradient-to-b from-white to-gray-50">
-    <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
+  <section id="philosophy" class="py-8 sm:py-12 bg-gradient-to-b from-white to-gray-50" data-animate>
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-8 sm:mb-12" data-i18n="philosophy-title">Наша философия</h2>
-      <div class="space-y-6 sm:space-y-8 text-gray-700 text-base sm:text-lg">
+      <div class="space-y-6 sm:space-y-8 text-gray-600 text-base sm:text-lg">
         <p data-i18n="philosophy-intro">Мы верим, что настоящий рост бизнеса возможен только через осознанный подход, конкретные инструменты и измеримые результаты. Вот принципы, которыми мы руководствуемся:</p>
-        
         <div class="border-l-4 border-gray-300 pl-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-avoid-cliches-title">Никаких шаблонов</h3>
           <p data-i18n="philosophy-avoid-cliches">Фраза «У нас всё готово!» до знакомства с вашим бизнесом — тревожный сигнал. Шаблонные решения для уникальных команд не работают. Мы создаём программы, адаптированные под ваш контекст.</p>
         </div>
-        
         <div class="border-l-4 border-gray-300 pl-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-concrete-results-title">Конкретика вместо обещаний</h3>
           <p data-i18n="philosophy-concrete-results">«Прокачаем лидерство» или «Сделаем команду счастливой» звучит красиво, но без чётких инструментов и кейсов — это пустые слова. Мы показываем, как достигаем результатов.</p>
         </div>
-        
         <div class="border-l-4 border-gray-300 pl-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-preparation-title">Тщательная подготовка</h3>
           <p data-i18n="philosophy-preparation">Перед обучением мы изучаем вашу аудиторию и цели. Без брифа и анализа обучение — как готовка с завязанными глазами. Мы уточняем ожидания, чтобы результат был полезным.</p>
         </div>
-        
         <div class="border-l-4 border-gray-300 pl-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-measurement-title">Измерение результатов</h3>
           <p data-i18n="philosophy-measurement">Мы используем KPI: тесты, опросы, обратную связь. Вы узнаете, каких результатов мы достигли в прошлых проектах и как их измеряли.</p>
         </div>
-        
         <div class="border-l-4 border-gray-300 pl-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-support-title">Поддержка после обучения</h3>
           <p data-i18n="philosophy-support">Знания закрепляются с практикой. Мы предоставляем чек-листы, задания и менторские сессии, чтобы навыки стали частью ваших процессов.</p>
         </div>
-        
         <div class="border-l-4 border-gray-300 pl-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-transparency-title">Прозрачность затрат</h3>
           <p data-i18n="philosophy-transparency">Мы объясняем, за что вы платите: подготовка, материалы, анализ. Никаких скрытых расходов или бесконечных уточнений.</p>
         </div>
-        
         <div class="border-l-4 border-gray-300 pl-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-responsibility-title">Совместная ответственность</h3>
           <p data-i18n="philosophy-responsibility">Обучение — не волшебная палочка. Мы даём инструменты, но успех зависит от вашей команды. Мы помогаем сделать шаг к изменениям, но результат — совместная работа.</p>
@@ -197,10 +229,10 @@
   </section>
 
   <!-- Contact Form -->
-  <section id="contact" class="py-12 sm:py-16">
-    <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
+  <section id="contact" class="py-8 sm:py-12" data-animate>
+    <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-6 sm:mb-8" data-i18n="contact-title">Готовы к росту?</h2>
-      <p class="text-base sm:text-lg text-gray-700 max-w-xl mx-auto mb-6 sm:mb-8" data-i18n="contact-description">Оставьте заявку, и мы поможем вашему бизнесу выйти на новый уровень.</p>
+      <p class="text-base sm:text-lg text-gray-600 max-w-xl mx-auto mb-6 sm:mb-8" data-i18n="contact-description">Оставьте заявку, и мы поможем вашему бизнесу выйти на новый уровень.</p>
       <form action="https://formspree.io/f/xpwrwepq" method="POST" class="max-w-xl mx-auto space-y-4">
         <label class="block text-left">
           <span class="text-gray-700 text-sm sm:text-base" data-i18n="contact-email-label">Ваш email:</span>
@@ -209,7 +241,7 @@
             name="email" 
             required 
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            class="mt-1 w-full p-2 sm:p-3 border border-gray-300 rounded-md text-sm sm:text-base" 
+            class="mt-1 w-full p-2 sm:p-3 border border-gray-300 rounded-md text-sm sm:text-base focus:ring-2 focus:ring-black" 
             placeholder="Введите ваш email"
             data-i18n-placeholder="contact-email-placeholder"
             aria-describedby="email-help"
@@ -221,7 +253,7 @@
           <textarea 
             name="message" 
             required 
-            class="mt-1 w-full p-2 sm:p-3 border border-gray-300 rounded-md text-sm sm:text-base" 
+            class="mt-1 w-full p-2 sm:p-3 border border-gray-300 rounded-md text-sm sm:text-base focus:ring-2 focus:ring-black" 
             rows="4" 
             placeholder="Опишите ваш проект"
             data-i18n-placeholder="contact-message-placeholder"
@@ -234,7 +266,7 @@
         </label>
         <button 
           type="submit" 
-          class="bg-black text-white py-2 px-4 sm:px-6 rounded-md hover:bg-gray-800 transition-all text-sm sm:text-base"
+          class="bg-black text-white py-2 px-4 sm:px-6 rounded-md hover:bg-gray-900 hover:scale-105 transition-all text-sm sm:text-base"
           data-i18n="contact-submit"
         >Отправить</button>
       </form>
@@ -248,11 +280,17 @@
     </div>
   </footer>
 
-  <!-- i18n Script -->
+  <!-- i18n and Animation Script -->
   <script>
     const translations = {
       ru: {
         title: "T-Solutions — Повышение прибыли в стиле Apple",
+        "meta-description": "T-Solutions помогает бизнесу увеличить прибыль через аудит, обучение и оптимизацию процессов продаж.",
+        "og-title": "T-Solutions — Повышение прибыли в стиле Apple",
+        "og-description": "Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!",
+        "og-url": "https://yourwebsite.com",
+        "twitter-title": "T-Solutions — Повышение прибыли в стиле Apple",
+        "twitter-description": "Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!",
         "nav-services": "Услуги",
         "nav-cases": "Кейсы",
         "nav-philosophy": "Философия",
@@ -305,6 +343,12 @@
       },
       en: {
         title: "T-Solutions — Boosting Profits in Apple Style",
+        "meta-description": "T-Solutions helps businesses increase profits through audits, training, and sales process optimization.",
+        "og-title": "T-Solutions — Boosting Profits in Apple Style",
+        "og-description": "We create sales teams that change the game. Learn how we boost business profits!",
+        "og-url": "https://yourwebsite.com/en",
+        "twitter-title": "T-Solutions — Boosting Profits in Apple Style",
+        "twitter-description": "We create sales teams that change the game. Learn how we boost business profits!",
         "nav-services": "Services",
         "nav-cases": "Case Studies",
         "nav-philosophy": "Philosophy",
@@ -357,6 +401,12 @@
       },
       fr: {
         title: "T-Solutions — Augmenter les profits à la manière d'Apple",
+        "meta-description": "T-Solutions aide les entreprises à augmenter leurs profits grâce à des audits, des formations et l'optimisation des processus de vente.",
+        "og-title": "T-Solutions — Augmenter les profits à la manière d'Apple",
+        "og-description": "Nous créons des équipes de vente qui changent la donne. Découvrez comment nous boostons les profits des entreprises !",
+        "og-url": "https://yourwebsite.com/fr",
+        "twitter-title": "T-Solutions — Augmenter les profits à la manière d'Apple",
+        "twitter-description": "Nous créons des équipes de vente qui changent la donne. Découvrez comment nous boostons les profits des entreprises !",
         "nav-services": "Services",
         "nav-cases": "Études de cas",
         "nav-philosophy": "Philosophie",
@@ -410,30 +460,73 @@
     };
 
     function setLanguage(lang) {
-      document.querySelectorAll("[data-i18n]").forEach(element => {
-        const key = element.getAttribute("data-i18n");
-        if (translations[lang][key]) {
-          element.textContent = translations[lang][key];
-        }
-      });
-      document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
-        const key = element.getAttribute("data-i18n-placeholder");
-        if (translations[lang][key]) {
-          element.placeholder = translations[lang][key];
-        }
-      });
-      document.title = translations[lang].title;
-      document.querySelector('html').lang = lang;
-      localStorage.setItem('language', lang);
+      try {
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.getAttribute("data-i18n");
+          if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+        document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+          const key = element.getAttribute("data-i18n-placeholder");
+          if (translations[lang][key]) {
+            element.placeholder = translations[lang][key];
+          }
+        });
+        document.querySelectorAll("[data-i18n-meta]").forEach(element => {
+          const key = element.getAttribute("data-i18n-meta");
+          if (translations[lang][key]) {
+            element.setAttribute('content', translations[lang][key]);
+          }
+        });
+        document.title = translations[lang].title;
+        document.querySelector('html').lang = lang;
+        localStorage.setItem('language', lang);
+        document.querySelectorAll('[data-lang]').forEach(btn => {
+          btn.classList.toggle('bg-black', btn.getAttribute('data-lang') === lang);
+          btn.classList.toggle('text-white', btn.getAttribute('data-lang') === lang);
+          btn.classList.toggle('bg-gray-100', btn.getAttribute('data-lang') !== lang);
+          btn.classList.toggle('text-gray-700', btn.getAttribute('data-lang') !== lang);
+        });
+      } catch (error) {
+        console.error('Error setting language:', error);
+      }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('language') || 'ru';
-      document.getElementById('language-switcher').value = savedLang;
       setLanguage(savedLang);
+
+      const hamburger = document.getElementById('hamburger-menu');
+      const navLinks = document.getElementById('nav-links');
+      const langButtons = document.getElementById('lang-buttons');
       
-      document.getElementById('language-switcher').addEventListener('change', (e) => {
-        setLanguage(e.target.value);
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navLinks.classList.toggle('active');
+        langButtons.classList.toggle('active');
+      });
+
+      document.querySelectorAll('[data-lang]').forEach(button => {
+        button.addEventListener('click', () => {
+          setLanguage(button.getAttribute('data-lang'));
+          hamburger.classList.remove('open');
+          navLinks.classList.remove('active');
+          langButtons.classList.remove('active');
+        });
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('[data-animate]').forEach(element => {
+        observer.observe(element);
       });
     });
   </script>
