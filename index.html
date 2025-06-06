@@ -1,10 +1,22 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>T-solutions — Повышение прибыли в стиле Apple</title>
+  <meta name="description" content="T-Solutions помогает бизнесу увеличить прибыль через аудит, обучение и оптимизацию процессов продаж." />
+  <meta property="og:title" content="T-Solutions — Повышение прибыли в стиле Apple" />
+  <meta property="og:description" content="Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="T-Solutions — Повышение прибыли в стиле Apple" />
+  <meta name="twitter:description" content="Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!" />
+  <meta name="twitter:image" content="https://yourwebsite.com/og-image.jpg" />
+  <title data-i18n="title">T-Solutions — Повышение прибыли в стиле Apple</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -26,14 +38,6 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-    .hero-bg {
-      background: linear-gradient(to bottom, #f5f5f7, #ffffff);
-    }
-    .section-title {
-      font-size: 3.5rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
   </style>
 </head>
 <body class="bg-white text-gray-900 scroll-smooth">
@@ -41,59 +45,66 @@
   <!-- Header -->
   <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-10">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-semibold">ProfiSales</h1>
-      <nav class="space-x-4 text-sm md:text-base">
-        <a href="#services" class="text-gray-600 hover:text-black">Услуги</a>
-        <a href="#cases" class="text-gray-600 hover:text-black">Кейсы</a>
-        <a href="#contact" class="text-gray-600 hover:text-black">Контакты</a>
-      </nav>
+      <h1 class="text-2xl font-semibold">T-Solutions</h1>
+      <div class="flex items-center space-x-4">
+        <nav aria-label="Основная навигация" class="space-x-4 text-sm md:text-base">
+          <a href="#services" class="text-gray-700 hover:text-black" data-i18n="nav-services">Услуги</a>
+          <a href="#cases" class="text-gray-700 hover:text-black" data-i18n="nav-cases">Кейсы</a>
+          <a href="#contact" class="text-gray-700 hover:text-black" data-i18n="nav-contact">Контакты</a>
+        </nav>
+        <select id="language-switcher" aria-label="Выберите язык" class="border border-gray-300 rounded p-1 text-sm">
+          <option value="ru">Русский</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero-bg pt-24 pb-16 text-center animate-fade">
+  <section class="bg-gradient-to-b from-gray-100 to-white pt-24 pb-16 text-center animate-fade">
     <div class="container mx-auto px-4">
-      <h2 class="section-title mb-6">Создаем отделы продаж, которые меняют игру</h2>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Мы превращаем бизнес-процессы в мощный инструмент роста прибыли через анализ, обучение и оптимизацию.</p>
-      <a href="#contact" class="inline-block bg-black text-white py-3 px-8 rounded-full hover:bg-gray-800 transition text-lg font-medium">Начать сейчас</a>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6" data-i18n="hero-title">Создаем отделы продаж, которые меняют игру</h2>
+      <p class="text-xl text-gray-700 max-w-2xl mx-auto mb-8" data-i18n="hero-description">Мы превращаем бизнес-процессы в мощный инструмент роста прибыли через анализ, обучение и оптимизацию.</p>
+      <a href="#contact" class="inline-block bg-black text-white py-3 px-8 rounded-full hover:bg-gray-800 transition text-lg font-medium" data-i18n="hero-cta">Начать сейчас</a>
     </div>
   </section>
 
   <!-- Services -->
   <section id="services" class="py-20">
     <div class="container mx-auto px-4">
-      <h2 class="section-title text-center mb-12">Наши решения</h2>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-center mb-12" data-i18n="services-title">Наши решения</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="text-center p-6 shadow rounded-lg hover:shadow-xl transition">
           <div class="h-16 w-16 mx-auto mb-4">
-            <!-- Иконка анализа -->
             <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <title>Анализ продаж</title>
               <path d="M11 17a4 4 0 100-8 4 4 0 000 8zm-6.6 2a8 8 0 0113.2 0M12 3v4m-6.2 1.8L4 10m16-1.2L17.2 8.8M21 12h-4m-1.8 6.2L16 20M8 20l1.8-1.8" />
             </svg>
           </div>
-          <h3 class="text-2xl font-semibold mb-2">Аудит продаж</h3>
-          <p class="text-gray-600">Глубокий анализ текущих процессов для выявления точек роста.</p>
+          <h3 class="text-2xl font-semibold mb-2" data-i18n="service-audit-title">Аудит продаж</h3>
+          <p class="text-gray-700" data-i18n="service-audit-description">Глубокий анализ текущих процессов для выявления точек роста.</p>
         </div>
         <div class="text-center p-6 shadow rounded-lg hover:shadow-xl transition">
           <div class="h-16 w-16 mx-auto mb-4">
-            <!-- Иконка обучения -->
             <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <title>Подбор и обучение</title>
               <path d="M12 14l9-5-9-5-9 5 9 5z" />
               <path d="M12 14l6.16-3.422A12.083 12.083 0 0121 15.6V19l-9 5-9-5v-3.4a12.083 12.083 0 012.84-5.022L12 14z" />
             </svg>
           </div>
-          <h3 class="text-2xl font-semibold mb-2">Подбор и обучение</h3>
-          <p class="text-gray-600">Формируем команду, закрывающую сделки с высокой конверсией.</p>
+          <h3 class="text-2xl font-semibold mb-2" data-i18n="service-training-title">Подбор и обучение</h3>
+          <p class="text-gray-700" data-i18n="service-training-description">Формируем команду, закрывающую сделки с высокой конверсией.</p>
         </div>
         <div class="text-center p-6 shadow rounded-lg hover:shadow-xl transition">
           <div class="h-16 w-16 mx-auto mb-4">
-            <!-- Иконка эффективности -->
             <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <title>Эффективные процессы</title>
               <path d="M3 10h4v10H3zM17 3h4v17h-4zM10 6h4v14h-4z" />
             </svg>
           </div>
-          <h3 class="text-2xl font-semibold mb-2">Эффективные процессы</h3>
-          <p class="text-gray-600">Оптимизируем бизнес-системы для увеличения прибыли.</p>
+          <h3 class="text-2xl font-semibold mb-2" data-i18n="service-processes-title">Эффективные процессы</h3>
+          <p class="text-gray-700" data-i18n="service-processes-description">Оптимизируем бизнес-системы для увеличения прибыли.</p>
         </div>
       </div>
     </div>
@@ -102,23 +113,31 @@
   <!-- Cases -->
   <section id="cases" class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-      <h2 class="section-title text-center mb-12">Результаты, которые говорят сами за себя</h2>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-center mb-12" data-i18n="cases-title">Результаты, которые говорят сами за себя</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-xl shadow-lg p-6">
-          <h3 class="text-2xl font-semibold mb-2">Интернет-магазин электроники</h3>
-          <p class="text-gray-600">Рост выручки на 30% и конверсии на 40% за 6 месяцев.</p>
+        <div class="bg-white rounded-xl shadow-lg p-6 flex items-center">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2" data-i18n="case-electronics-title">Интернет-магазин электроники</h3>
+            <p class="text-gray-700" data-i18n="case-electronics-description">Рост выручки на 30% и конверсии на 40% за 6 месяцев.</p>
+          </div>
         </div>
-        <div class="bg-white rounded-xl shadow-lg p-6">
-          <h3 class="text-2xl font-semibold mb-2">Образовательная платформа</h3>
-          <p class="text-gray-600">Увеличение команды и рост конверсии на 35% за 3 месяца.</p>
+        <div class="bg-white rounded-xl shadow-lg p-6 flex items-center">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2" data-i18n="case-education-title">Образовательная платформа</h3>
+            <p class="text-gray-700" data-i18n="case-education-description">Увеличение команды и рост конверсии на 35% за 3 месяца.</p>
+          </div>
         </div>
-        <div class="bg-white rounded-xl shadow-lg p-6">
-          <h3 class="text-2xl font-semibold mb-2">Компания ASSOL</h3>
-          <p class="text-gray-600">Рост среднего чека на 40%, внедрение системы оценки качества, повышение оборота на 20-30% и создание обучающей системы.</p>
+        <div class="bg-white rounded-xl shadow-lg p-6 flex items-center">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2" data-i18n="case-assol-title">Компания ASSOL</h3>
+            <p class="text-gray-700" data-i18n="case-assol-description">Рост среднего чека на 40%, внедрение системы оценки качества, повышение оборота на 20-30% и создание обучающей системы.</p>
+          </div>
         </div>
-        <div class="bg-white rounded-xl shadow-lg p-6">
-          <h3 class="text-2xl font-semibold mb-2">Bonnett Enterprises</h3>
-          <p class="text-gray-600">Создание системы бонусов, привлечение клиента с 317 апартаментами, рост чека на 25%, разработка сайта и мобильного приложения.</p>
+        <div class="bg-white rounded-xl shadow-lg p-6 flex items-center">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2" data-i18n="case-bonnett-title">Bonnett Enterprises</h3>
+            <p class="text-gray-700" data-i18n="case-bonnett-description">Создание системы бонусов, привлечение клиента с 317 апартаментами, рост чека на 25%, разработка сайта и мобильного приложения.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -127,42 +146,193 @@
   <!-- Contact Form -->
   <section id="contact" class="py-20">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="section-title mb-6">Готовы к росту?</h2>
-      <p class="text-xl text-gray-600 max-w-xl mx-auto mb-8">Оставьте заявку, и мы поможем вашему бизнесу выйти на новый уровень.</p>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6" data-i18n="contact-title">Готовы к росту?</h2>
+      <p class="text-xl text-gray-700 max-w-xl mx-auto mb-8" data-i18n="contact-description">Оставьте заявку, и мы поможем вашему бизнесу выйти на новый уровень.</p>
       <form action="https://formspree.io/f/xpwrwepq" method="POST" class="max-w-xl mx-auto space-y-4">
-  <label class="block text-left">
-    <span class="text-gray-700">Ваш email:</span>
-    <input 
-      type="email" 
-      name="email" 
-      required 
-      class="mt-1 w-full p-2 border border-gray-300 rounded" 
-      placeholder="you@example.com"
-    >
-  </label>
-  <label class="block text-left">
-    <span class="text-gray-700">Сообщение:</span>
-    <textarea 
-      name="message" 
-      required 
-      class="mt-1 w-full p-2 border border-gray-300 rounded" 
-      rows="5" 
-      placeholder="Напишите нам..."
-    ></textarea>
-  </label>
-  <button 
-    type="submit" 
-    class="bg-black text-white py-2 px-6 rounded hover:bg-gray-800 transition"
-  >
-    Отправить
-  </button>
-</form>
+        <label class="block text-left">
+          <span class="text-gray-700" data-i18n="contact-email-label">Ваш email:</span>
+          <input 
+            type="email" 
+            name="email" 
+            required 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            class="mt-1 w-full p-2 border border-gray-300 rounded" 
+            placeholder="Введите ваш email"
+            data-i18n-placeholder="contact-email-placeholder"
+            aria-describedby="email-help"
+          >
+          <p id="email-help" class="text-sm text-gray-500 mt-1" data-i18n="contact-email-help">Мы свяжемся с вами для обсуждения проекта.</p>
+        </label>
+        <label class="block text-left">
+          <span class="text-gray-700" data-i18n="contact-message-label">Сообщение:</span>
+          <textarea 
+            name="message" 
+            required 
+            class="mt-1 w-full p-2 border border-gray-300 rounded" 
+            rows="5" 
+            placeholder="Опишите ваш проект"
+            data-i18n-placeholder="contact-message-placeholder"
+            aria-describedby="message-help"
+          ></textarea>
+          <p id="message-help" class="text-sm text-gray-500 mt-1" data-i18n="contact-message-help">Расскажите, как мы можем помочь вашему бизнесу.</p>
+        </label>
+        <label style="display:none;">
+          <input type="text" name="_gotcha">
+        </label>
+        <button 
+          type="submit" 
+          class="bg-black text-white py-2 px-6 rounded hover:bg-gray-800 transition"
+          data-i18n="contact-submit"
+        >Отправить</button>
+      </form>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-6">
     <div class="container mx-auto px-4 text-center">
-      <p class="text-gray-400">&copy; 2025 ProfiSales. Все права защищены.</p>
+      <p class="text-gray-400" data-i18n="footer">© <script>document.write(new Date().getFullYear())</script> T-Solutions. Все права защищены.</p>
     </div>
   </footer>
 
+  <!-- i18n Script -->
+  <script>
+    const translations = {
+      ru: {
+        title: "T-Solutions — Повышение прибыли в стиле Apple",
+        "nav-services": "Услуги",
+        "nav-cases": "Кейсы",
+        "nav-contact": "Контакты",
+        "hero-title": "Создаем отделы продаж, которые меняют игру",
+        "hero-description": "Мы превращаем бизнес-процессы в мощный инструмент роста прибыли через анализ, обучение и оптимизацию.",
+        "hero-cta": "Начать сейчас",
+        "services-title": "Наши решения",
+        "service-audit-title": "Аудит продаж",
+        "service-audit-description": "Глубокий анализ текущих процессов для выявления точек роста.",
+        "service-training-title": "Подбор и обучение",
+        "service-training-description": "Формируем команду, закрывающую сделки с высокой конверсией.",
+        "service-processes-title": "Эффективные процессы",
+        "service-processes-description": "Оптимизируем бизнес-системы для увеличения прибыли.",
+        "cases-title": "Результаты, которые говорят сами за себя",
+        "case-electronics-title": "Интернет-магазин электроники",
+        "case-electronics-description": "Рост выручки на 30% и конверсии на 40% за 6 месяцев.",
+        "case-education-title": "Образовательная платформа",
+        "case-education-description": "Увеличение команды и рост конверсии на 35% за 3 месяца.",
+        "case-assol-title": "Компания ASSOL",
+        "case-assol-description": "Рост среднего чека на 40%, внедрение системы оценки качества, повышение оборота на 20-30% и создание обучающей системы.",
+        "case-bonnett-title": "Bonnett Enterprises",
+        "case-bonnett-description": "Создание системы бонусов, привлечение клиента с 317 апартаментами, рост чека на 25%, разработка сайта и мобильного приложения.",
+        "contact-title": "Готовы к росту?",
+        "contact-description": "Оставьте заявку, и мы поможем вашему бизнесу выйти на новый уровень.",
+        "contact-email-label": "Ваш email:",
+        "contact-email-placeholder": "Введите ваш email",
+        "contact-email-help": "Мы свяжемся с вами для обсуждения проекта.",
+        "contact-message-label": "Сообщение:",
+        "contact-message-placeholder": "Опишите ваш проект",
+        "contact-message-help": "Расскажите, как мы можем помочь вашему бизнесу.",
+        "contact-submit": "Отправить",
+        footer: "© " + new Date().getFullYear() + " T-Solutions. Все права защищены."
+      },
+      en: {
+        title: "T-Solutions — Boosting Profits in Apple Style",
+        "nav-services": "Services",
+        "nav-cases": "Case Studies",
+        "nav-contact": "Contact",
+        "hero-title": "We Create Sales Teams That Change the Game",
+        "hero-description": "We transform business processes into powerful tools for profit growth through analysis, training, and optimization.",
+        "hero-cta": "Get Started",
+        "services-title": "Our Solutions",
+        "service-audit-title": "Sales Audit",
+        "service-audit-description": "In-depth analysis of current processes to identify growth opportunities.",
+        "service-training-title": "Recruitment and Training",
+        "service-training-description": "Building teams that close deals with high conversion rates.",
+        "service-processes-title": "Efficient Processes",
+        "service-processes-description": "Optimizing business systems to increase profits.",
+        "cases-title": "Results That Speak for Themselves",
+        "case-electronics-title": "Electronics Online Store",
+        "case-electronics-description": "30% revenue growth and 40% conversion increase in 6 months.",
+        "case-education-title": "Educational Platform",
+        "case-education-description": "Team expansion and 35% conversion growth in 3 months.",
+        "case-assol-title": "ASSOL Company",
+        "case-assol-description": "40% increase in average order value, quality assessment system implementation, 20-30% turnover growth, and training system creation.",
+        "case-bonnett-title": "Bonnett Enterprises",
+        "case-bonnett-description": "Bonus system creation, acquisition of a client with 317 apartments, 25% order value increase, website and mobile app development.",
+        "contact-title": "Ready to Grow?",
+        "contact-description": "Submit a request, and we'll help your business reach the next level.",
+        "contact-email-label": "Your email:",
+        "contact-email-placeholder": "Enter your email",
+        "contact-email-help": "We'll contact you to discuss your project.",
+        "contact-message-label": "Message:",
+        "contact-message-placeholder": "Describe your project",
+        "contact-message-help": "Tell us how we can help your business.",
+        "contact-submit": "Submit",
+        footer: "© " + new Date().getFullYear() + " T-Solutions. All rights reserved."
+      },
+      fr: {
+        title: "T-Solutions — Augmenter les profits à la manière d'Apple",
+        "nav-services": "Services",
+        "nav-cases": "Études de cas",
+        "nav-contact": "Contact",
+        "hero-title": "Nous créons des équipes de vente qui changent la donne",
+        "hero-description": "Nous transformons les processus d'entreprise en outils puissants pour la croissance des profits grâce à l'analyse, la formation et l'optimisation.",
+        "hero-cta": "Commencer maintenant",
+        "services-title": "Nos solutions",
+        "service-audit-title": "Audit des ventes",
+        "service-audit-description": "Analyse approfondie des processus actuels pour identifier les opportunités de croissance.",
+        "service-training-title": "Recrutement et formation",
+        "service-training-description": "Création d'équipes qui concluent des transactions avec un taux de conversion élevé.",
+        "service-processes-title": "Processus efficaces",
+        "service-processes-description": "Optimisation des systèmes d'entreprise pour augmenter les profits.",
+        "cases-title": "Des résultats qui parlent d'eux-mêmes",
+        "case-electronics-title": "Magasin d'électronique en ligne",
+        "case-electronics-description": "Augmentation de 30 % du chiffre d'affaires et de 40 % du taux de conversion en 6 mois.",
+        "case-education-title": "Plateforme éducative",
+        "case-education-description": "Expansion de l'équipe et augmentation de 35 % du taux de conversion en 3 mois.",
+        "case-assol-title": "Entreprise ASSOL",
+        "case-assol-description": "Augmentation de 40 % du panier moyen, mise en place d'un système d'évaluation de la qualité, croissance du chiffre d'affaires de 20-30 % et création d'un système de formation.",
+        "case-bonnett-title": "Bonnett Enterprises",
+        "case-bonnett-description": "Création d'un système de bonus, acquisition d'un client avec 317 appartements, augmentation de 25 % du panier moyen, développement d'un site web et d'une application mobile.",
+        "contact-title": "Prêt à croître ?",
+        "contact-description": "Envoyez une demande, et nous aiderons votre entreprise à passer au niveau supérieur.",
+        "contact-email-label": "Votre email :",
+        "contact-email-placeholder": "Entrez votre email",
+        "contact-email-help": "Nous vous contacterons pour discuter de votre projet.",
+        "contact-message-label": "Message :",
+        "contact-message-placeholder": "Décrivez votre projet",
+        "contact-message-help": "Dites-nous comment nous pouvons aider votre entreprise.",
+        "contact-submit": "Envoyer",
+        footer: "© " + new Date().getFullYear() + " T-Solutions. Tous droits réservés."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (translations[lang][key]) {
+          element.placeholder = translations[lang][key];
+        }
+      });
+      document.title = translations[lang].title;
+      document.querySelector('html').lang = lang;
+      localStorage.setItem('language', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('language') || 'ru';
+      document.getElementById('language-switcher').value = savedLang;
+      setLanguage(savedLang);
+      
+      document.getElementById('language-switcher').addEventListener('change', (e) => {
+        setLanguage(e.target.value);
+      });
+    });
+  </script>
 </body>
 </html>
+```
