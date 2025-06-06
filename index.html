@@ -1,24 +1,23 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" data-i18n-meta="meta-description" content="T-Solutions помогает бизнесу увеличить прибыль через аудит, обучение и оптимизацию процессов продаж." />
-  <meta property="og:title" data-i18n-meta="og-title" content="T-Solutions — Повышение прибыли в стиле Apple" />
-  <meta property="og:description" data-i18n-meta="og-description" content="Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!" />
+  <meta name="description" data-i18n-meta="meta-description" content="T-Solutions создает индивидуальные решения для роста бизнеса, основанные на глубоком анализе, прозрачности и измеримых результатах." />
+  <meta property="og:title" data-i18n-meta="og-title" content="T-Solutions — Индивидуальные решения для вашего бизнеса" />
+  <meta property="og:description" data-i18n-meta="og-description" content="Мы создаем не шаблоны, а решения, адаптированные под ваш бизнес. Узнайте, как мы работаем с осознанностью и конкретными результатами." />
   <meta property="og:type" content="website" />
   <meta property="og:url" data-i18n-meta="og-url" content="https://yourwebsite.com" />
   <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" data-i18n-meta="twitter-title" content="T-Solutions — Повышение прибыли в стиле Apple" />
-  <meta name="twitter:description" data-i18n-meta="twitter-description" content="Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!" />
+  <meta name="twitter:title" data-i18n-meta="twitter-title" content="T-Solutions — Индивидуальные решения для вашего бизнеса" />
+  <meta name="twitter:description" data-i18n-meta="twitter-description" content="Мы создаем не шаблоны, а решения, адаптированные под ваш бизнес. Узнайте, как мы работаем с осознанностью и конкретными результатами." />
   <meta name="twitter:image" content="https://yourwebsite.com/og-image.jpg" />
   <link rel="alternate" hreflang="ru" href="https://yourwebsite.com" />
   <link rel="alternate" hreflang="en" href="https://yourwebsite.com/en" />
   <link rel="alternate" hreflang="fr" href="https://yourwebsite.com/fr" />
   <link rel="alternate" hreflang="x-default" href="https://yourwebsite.com" />
-  <title data-i18n="title">T-Solutions — Повышение прибыли в стиле Apple</title>
+  <title data-i18n="title">T-Solutions — Индивидуальные решения для вашего бизнеса</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -51,7 +50,7 @@
     }
     @media (max-width: 640px) {
       .parallax-bg {
-        background-attachment: scroll; /* Отключаем параллакс на мобильных */
+        background-attachment: scroll;
       }
       #nav-links, #lang-buttons {
         display: none;
@@ -80,7 +79,7 @@
     }
     [data-animate] {
       opacity: 0;
-      transform: translateY(20px) scale(0.95);
+      transform: translateY(20px) scale(0.98);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
       will-change: opacity, transform;
     }
@@ -92,6 +91,12 @@
       0% { opacity: 0; transform: translateY(-20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+    .philosophy-item hr {
+      border: 0;
+      height: 1px;
+      background: rgba(0,0,0,0.1);
+      margin: 1.5rem 0;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -102,8 +107,8 @@
       <h1 class="text-xl sm:text-2xl font-semibold">T-Solutions</h1>
       <div class="flex items-center">
         <nav id="nav-links" aria-label="Основная навигация" class="flex space-x-4 text-sm sm:text-base">
-          <a href="#services" class="text-gray-700 hover:text-black transition-all" data-i18n="nav-services">Услуги</a>
-          <a href="#cases" class="text-gray-700 hover:text-black transition-all" data-i18n="nav-cases">Кейсы</a>
+          <a href="#services" class="text-gray-700 hover:text-black transition-all" data-i18n="nav-services">Решения</a>
+          <a href="#cases" class="text-gray-700 hover:text-black transition-all" data-i18n="nav-cases">Истории</a>
           <a href="#philosophy" class="text-gray-700 hover:text-black transition-all" data-i18n="nav-philosophy">Философия</a>
           <a href="#contact" class="text-gray-700 hover:text-black transition-all" data-i18n="nav-contact">Контакты</a>
         </nav>
@@ -126,47 +131,47 @@
   <!-- Hero Section -->
   <section class="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-16 sm:pt-20 pb-12 text-center parallax-bg" data-animate>
     <div class="container mx-auto px-4 sm:px-6 max-w-5xl parallax-content">
-      <h2 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight mb-4 sm:mb-6" data-i18n="hero-title">Создаем отделы продаж, которые меняют игру</h2>
-      <p class="text-base sm:text-lg text-gray-600 max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-8" data-i18n="hero-description">Мы превращаем бизнес-процессы в мощный инструмент роста прибыли через анализ, обучение и оптимизацию.</p>
-      <a href="#contact" class="inline-block bg-black text-white py-2 sm:py-3 px-6 sm:px-8 rounded-full hover:bg-gray-900 hover:scale-105 transition-all text-base sm:text-lg font-medium" data-i18n="hero-cta">Начать сейчас</a>
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight mb-4 sm:mb-6" data-i18n="hero-title">Рост через осознанные решения</h2>
+      <p class="text-base sm:text-lg text-gray-600 max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-8" data-i18n="hero-description">Мы создаем не шаблоны, а инструменты, адаптированные под ваш бизнес. Наш подход — это глубокий анализ, прозрачность и измеримые результаты.</p>
+      <a href="#contact" class="inline-block bg-black text-white py-2 sm:py-3 px-6 sm:px-8 rounded-full hover:bg-gray-900 hover:scale-105 transition-all text-base sm:text-lg font-medium" data-i18n="hero-cta">Начать партнерство</a>
     </div>
   </section>
 
   <!-- Services -->
   <section id="services" class="py-8 sm:py-12 border-b border-gray-100" data-animate>
     <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-8 sm:mb-12" data-i18n="services-title">Наши решения</h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-8 sm:mb-12" data-i18n="services-title">Инструменты для вашего успеха</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
         <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all z-10" data-animate style="transition-delay: 0.1s;">
           <div class="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4">
             <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-              <title>Анализ продаж</title>
+              <title>Аналитика</title>
               <path d="M11 17a4 4 0 100-8 4 4 0 000 8zm-6.6 2a8 8 0 0113.2 0M12 3v4m-6.2 1.8L4 10m16-1.2L17.2 8.8M21 12h-4m-1.8 6.2L16 20M8 20l1.8-1.8" />
             </svg>
           </div>
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="service-audit-title">Аудит продаж</h3>
-          <p class="text-gray-600 text-base sm:text-lg" data-i18n="service-audit-description">Глубокий анализ текущих процессов для выявления точек роста.</p>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="service-audit-title">Аналитика процессов</h3>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="service-audit-description">Погружаемся в ваш бизнес, чтобы найти точки роста. Никаких общих рекомендаций — только данные и конкретные шаги.</p>
         </div>
         <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all z-10" data-animate style="transition-delay: 0.2s;">
           <div class="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4">
             <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-              <title>Подбор и обучение</title>
+              <title>Развитие команды</title>
               <path d="M12 14l9-5-9-5-9 5 9 5z" />
               <path d="M12 14l6.16-3.422A12.083 12.083 0 0121 15.6V19l-9 5-9-5v-3.4a12.083 12.083 0 012.84-5.022L12 14z" />
             </svg>
           </div>
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="service-training-title">Подбор и обучение</h3>
-          <p class="text-gray-600 text-base sm:text-lg" data-i18n="service-training-description">Формируем команду, закрывающую сделки с высокой конверсией.</p>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="service-training-title">Развитие команды</h3>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="service-training-description">Создаем программы обучения под вашу команду. Обеспечиваем поддержку, чтобы навыки работали на результат.</p>
         </div>
         <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all z-10" data-animate style="transition-delay: 0.3s;">
           <div class="h-12 w-12 sm:h-14 sm:w-14 mx-auto mb-4">
             <svg class="w-full h-full text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-              <title>Эффективные процессы</title>
+              <title>Оптимизация систем</title>
               <path d="M3 10h4v10H3zM17 3h4v17h-4zM10 6h4v14h-4z" />
             </svg>
           </div>
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="service-processes-title">Эффективные процессы</h3>
-          <p class="text-gray-600 text-base sm:text-lg" data-i18n="service-processes-description">Оптимизируем бизнес-системы для увеличения прибыли.</p>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="service-processes-title">Оптимизация систем</h3>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="service-processes-description">Настраиваем процессы, которые измеряют прогресс и дают результат. Все прозрачно и адаптировано под вас.</p>
         </div>
       </div>
     </div>
@@ -175,23 +180,23 @@
   <!-- Cases -->
   <section id="cases" class="py-8 sm:py-12 bg-gray-50" data-animate>
     <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-8 sm:mb-12" data-i18n="cases-title">Результаты, которые говорят сами за себя</h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-center mb-8 sm:mb-12" data-i18n="cases-title">Истории совместного успеха</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
         <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all z-10" data-animate style="transition-delay: 0.1s;">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-electronics-title">Интернет-магазин электроники</h3>
-          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-electronics-description">Рост выручки на 30% и конверсии на 40% за 6 месяцев.</p>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-electronics-title">Магазин электроники</h3>
+          <p class="text-gray-600 text-sm sm:text-base sm:text-lg" data-i18n="case-electronics-description">Анализировали воронку продаж, создали кастомное обучение для команды, внедрили KPI. Результат: сделки стали закрываться быстрее, а средний чек вырос.</p>
         </div>
         <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all z-10" data-animate style="transition-delay: 0.2s;">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-education-title">Образовательная платформа</h3>
-          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-education-description">Увеличение команды и рост конверсии на 35% за 3 месяца.</p>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-education-description">Разработали программу подбора сотрудников и их подготовки. Сопровождали внедрение. Итог: команда выросла, а конверсия увеличилась.</p>
         </div>
         <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all z-10" data-animate style="transition-delay: 0.3s;">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-assol-title">Компания ASSOL</h3>
-          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-assol-description">Рост среднего чека на 40%, внедрение системы оценки качества, повышение оборота на 20-30% и создание обучающей системы.</p>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-assol-description">Погрузились в бизнес, настроили оценку качества и обучение. Чек-листы и менторство закрепили результат: продажи выросли, команда стала эффективнее.</p>
         </div>
         <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all z-10" data-animate style="transition-delay: 0.4s;">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="case-bonnett-title">Bonnett Enterprises</h3>
-          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-bonnett-description">Создание системы бонусов, привлечение клиента с 317 апартаментами, рост чека на 25%, разработка сайта и мобильного приложения.</p>
+          <p class="text-gray-600 text-base sm:text-lg" data-i18n="case-bonnett-description">Создали бонусную систему, адаптированную под клиента. Поддерживали внедрение через задания и анализ. Итог: новый крупный клиент и рост выручки.</p>
         </div>
       </div>
     </div>
@@ -201,35 +206,41 @@
   <section id="philosophy" class="py-8 sm:py-12 bg-gradient-to-b from-white to-gray-50" data-animate>
     <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-8 sm:mb-12" data-i18n="philosophy-title">Наша философия</h2>
-      <div class="space-y-6 sm:space-y-8 text-gray-600 text-base sm:text-lg">
-        <p data-i18n="philosophy-intro">Мы верим, что настоящий рост бизнеса возможен только через осознанный подход, конкретные инструменты и измеримые результаты. Вот принципы, которыми мы руководствуемся:</p>
-        <div class="border-l-4 border-gray-300 pl-4">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-avoid-cliches-title">Никаких шаблонов</h3>
-          <p data-i18n="philosophy-avoid-cliches">Фраза «У нас всё готово!» до знакомства с вашим бизнесом — тревожный сигнал. Шаблонные решения для уникальных команд не работают. Мы создаём программы, адаптированные под ваш контекст.</p>
+      <div class="space-y-12 text-gray-600 text-lg">
+        <p class="max-w-3xl mx-auto text-center" data-i18n="philosophy-intro">Мы верим, что настоящий рост бизнеса возможен только через осознанный подход, конкретные инструменты и измеримые результаты. Вот принципы, которыми мы руководствуемся:</p>
+        <div class="philosophy-item" data-animate style="transition-delay: 0.1s;">
+          <h3 class="text-2xl sm:text-3xl font-semibold mb-4" data-i18n="philosophy-avoid-cliches-title">Никаких шаблонов</h3>
+          <p class="max-w-2xl mx-auto" data-i18n="philosophy-avoid-cliches">Фраза «У нас всё готово!» до знакомства с вашим бизнесом — тревожный сигнал. Шаблонные решения для уникальных команд не работают. Мы создаём программы, адаптированные под ваш контекст.</p>
+          <hr>
         </div>
-        <div class="border-l-4 border-gray-300 pl-4">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-concrete-results-title">Конкретика вместо обещаний</h3>
-          <p data-i18n="philosophy-concrete-results">«Прокачаем лидерство» или «Сделаем команду счастливой» звучит красиво, но без чётких инструментов и кейсов — это пустые слова. Мы показываем, как достигаем результатов.</p>
+        <div class="philosophy-item" data-animate style="transition-delay: 0.2s;">
+          <h3 class="text-2xl sm:text-3xl font-semibold mb-4" data-i18n="philosophy-concrete-results-title">Конкретика вместо обещаний</h3>
+          <p class="max-w-2xl mx-auto" data-i18n="philosophy-concrete-results">«Прокачаем лидерство» или «Сделаем команду счастливой» звучит красиво, но без чётких инструментов и кейсов — это пустые слова. Мы показываем, как достигаем результатов.</p>
+          <hr>
         </div>
-        <div class="border-l-4 border-gray-300 pl-4">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-preparation-title">Тщательная подготовка</h3>
-          <p data-i18n="philosophy-preparation">Перед обучением мы изучаем вашу аудиторию и цели. Без брифа и анализа обучение — как готовка с завязанными глазами. Мы уточняем ожидания, чтобы результат был полезным.</p>
+        <div class="philosophy-item" data-animate style="transition-delay: 0.3s;">
+          <h3 class="text-2xl sm:text-3xl font-semibold mb-4" data-i18n="philosophy-preparation-title">Тщательная подготовка</h3>
+          <p class="max-w-2xl mx-auto" data-i18n="philosophy-preparation">Перед обучением мы изучаем вашу аудиторию и цели. Без брифа и анализа обучение — как готовка с завязанными глазами. Мы уточняем ожидания, чтобы результат был полезным.</p>
+          <hr>
         </div>
-        <div class="border-l-4 border-gray-300 pl-4">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-measurement-title">Измерение результатов</h3>
-          <p data-i18n="philosophy-measurement">Мы используем KPI: тесты, опросы, обратную связь. Вы узнаете, каких результатов мы достигли в прошлых проектах и как их измеряли.</p>
+        <div class="philosophy-item" data-animate style="transition-delay: 0.4s;">
+          <h3 class="text-2xl sm:text-3xl font-semibold mb-4" data-i18n="philosophy-measurement-title">Измерение результатов</h3>
+          <p class="max-w-2xl mx-auto" data-i18n="philosophy-measurement">Мы используем KPI: тесты, опросы, обратную связь. Вы узнаете, каких результатов мы достигли в прошлых проектах и как их измеряли.</p>
+          <hr>
         </div>
-        <div class="border-l-4 border-gray-300 pl-4">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-support-title">Поддержка после обучения</h3>
-          <p data-i18n="philosophy-support">Знания закрепляются с практикой. Мы предоставляем чек-листы, задания и менторские сессии, чтобы навыки стали частью ваших процессов.</p>
+        <div class="philosophy-item" data-animate style="transition-delay: 0.5s;">
+          <h3 class="text-2xl sm:text-3xl font-semibold mb-4" data-i18n="philosophy-support-title">Поддержка после обучения</h3>
+          <p class="max-w-2xl mx-auto" data-i18n="philosophy-support">Знания закрепляются с практикой. Мы предоставляем чек-листы, задания и менторские сессии, чтобы навыки стали частью ваших процессов.</p>
+          <hr>
         </div>
-        <div class="border-l-4 border-gray-300 pl-4">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-transparency-title">Прозрачность затрат</h3>
-          <p data-i18n="philosophy-transparency">Мы объясняем, за что вы платите: подготовка, материалы, анализ. Никаких скрытых расходов или бесконечных уточнений.</p>
+        <div class="philosophy-item" data-animate style="transition-delay: 0.6s;">
+          <h3 class="text-2xl sm:text-3xl font-semibold mb-4" data-i18n="philosophy-transparency-title">Прозрачность затрат</h3>
+          <p class="max-w-2xl mx-auto" data-i18n="philosophy-transparency">Мы объясняем, за что вы платите: подготовка, материалы, анализ. Никаких скрытых расходов или бесконечных уточнений.</p>
+          <hr>
         </div>
-        <div class="border-l-4 border-gray-300 pl-4">
-          <h3 class="text-xl sm:text-2xl font-semibold mb-2" data-i18n="philosophy-responsibility-title">Совместная ответственность</h3>
-          <p data-i18n="philosophy-responsibility">Обучение — не волшебная палочка. Мы даём инструменты, но успех зависит от вашей команды. Мы помогаем сделать шаг к изменениям, но результат — совместная работа.</p>
+        <div class="philosophy-item" data-animate style="transition-delay: 0.7s;">
+          <h3 class="text-2xl sm:text-3xl font-semibold mb-4" data-i18n="philosophy-responsibility-title">Совместная ответственность</h3>
+          <p class="max-w-2xl mx-auto" data-i18n="philosophy-responsibility">Обучение — не волшебная палочка. Мы даём инструменты, но успех зависит от вашей команды. Мы помогаем сделать шаг к изменениям, но результат — совместная работа.</p>
         </div>
       </div>
     </div>
@@ -238,8 +249,8 @@
   <!-- Contact Form -->
   <section id="contact" class="py-8 sm:py-12" data-animate>
     <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-6 sm:mb-8" data-i18n="contact-title">Готовы к росту?</h2>
-      <p class="text-base sm:text-lg text-gray-600 max-w-xl mx-auto mb-6 sm:mb-8" data-i18n="contact-description">Оставьте заявку, и мы поможем вашему бизнесу выйти на новый уровень.</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center mb-6 sm:mb-8" data-i18n="contact-title">Начнем совместный путь?</h2>
+      <p class="text-base sm:text-lg text-gray-600 max-w-xl mx-auto mb-6 sm:mb-8" data-i18n="contact-description">Расскажите о вашем бизнесе, и мы подготовим индивидуальный план с прозрачными шагами и измеримым результатом.</p>
       <form action="https://formspree.io/f/xpwrwepq" method="POST" class="max-w-xl mx-auto space-y-4">
         <label class="block text-left">
           <span class="text-gray-700 text-sm sm:text-base" data-i18n="contact-email-label">Ваш email:</span>
@@ -253,20 +264,20 @@
             data-i18n-placeholder="contact-email-placeholder"
             aria-describedby="email-help"
           >
-          <p id="email-help" class="text-xs sm:text-sm text-gray-500 mt-1" data-i18n="contact-email-help">Мы свяжемся с вами для обсуждения проекта.</p>
+          <p id="email-help" class="text-xs sm:text-sm text-gray-500 mt-1" data-i18n="contact-email-help">Мы свяжемся, чтобы обсудить ваш проект.</p>
         </label>
         <label class="block text-left">
-          <span class="text-gray-700 text-sm sm:text-base" data-i18n="contact-message-label">Сообщение:</span>
+          <span class="text-gray-700 text-sm sm:text-base" data-i18n="contact-message-label">О вашем бизнесе:</span>
           <textarea 
             name="message" 
             required 
             class="mt-1 w-full p-2 sm:p-3 border border-gray-300 rounded-md text-sm sm:text-base focus:ring-2 focus:ring-black" 
             rows="4" 
-            placeholder="Опишите ваш проект"
+            placeholder="Расскажите о ваших целях"
             data-i18n-placeholder="contact-message-placeholder"
             aria-describedby="message-help"
           ></textarea>
-          <p id="message-help" class="text-xs sm:text-sm text-gray-500 mt-1" data-i18n="contact-message-help">Расскажите, как мы можем помочь вашему бизнесу.</p>
+          <p id="message-help" class="text-xs sm:text-sm text-gray-500 mt-1" data-i18n="contact-message-help">Чем подробнее вы опишете задачу, тем точнее будет наш план.</p>
         </label>
         <label style="display:none;">
           <input type="text" name="_gotcha">
@@ -291,36 +302,36 @@
   <script>
     const translations = {
       ru: {
-        title: "T-Solutions — Повышение прибыли в стиле Apple",
-        "meta-description": "T-Solutions помогает бизнесу увеличить прибыль через аудит, обучение и оптимизацию процессов продаж.",
-        "og-title": "T-Solutions — Повышение прибыли в стиле Apple",
-        "og-description": "Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!",
+        title: "T-Solutions — Индивидуальные решения для вашего бизнеса",
+        "meta-description": "T-Solutions создает индивидуальные решения для роста бизнеса, основанные на глубоком анализе, прозрачности и измеримых результатах.",
+        "og-title": "T-Solutions — Индивидуальные решения для вашего бизнеса",
+        "og-description": "Мы создаем не шаблоны, а решения, адаптированные под ваш бизнес. Узнайте, как мы работаем с осознанностью и конкретными результатами.",
         "og-url": "https://yourwebsite.com",
-        "twitter-title": "T-Solutions — Повышение прибыли в стиле Apple",
-        "twitter-description": "Создаем отделы продаж, которые меняют игру. Узнайте, как мы увеличиваем прибыль бизнеса!",
-        "nav-services": "Услуги",
-        "nav-cases": "Кейсы",
+        "twitter-title": "T-Solutions — Индивидуальные решения",
+        "twitter-description": "Мы создаем не шаблоны, а решения, адаптированные к вашему бизнесу. Узнайте, как мы работаем с осознанностью!",
+        "nav-services": "Решения",
+        "nav-cases": "Истории",
         "nav-philosophy": "Философия",
         "nav-contact": "Контакты",
-        "hero-title": "Создаем отделы продаж, которые меняют игру",
-        "hero-description": "Мы превращаем бизнес-процессы в мощный инструмент роста прибыли через анализ, обучение и оптимизацию.",
-        "hero-cta": "Начать сейчас",
-        "services-title": "Наши решения",
-        "service-audit-title": "Аудит продаж",
-        "service-audit-description": "Глубокий анализ текущих процессов для выявления точек роста.",
-        "service-training-title": "Подбор и обучение",
-        "service-training-description": "Формируем команду, закрывающую сделки с высокой конверсией.",
-        "service-processes-title": "Эффективные процессы",
-        "service-processes-description": "Оптимизируем бизнес-системы для увеличения прибыли.",
-        "cases-title": "Результаты, которые говорят сами за себя",
-        "case-electronics-title": "Интернет-магазин электроники",
-        "case-electronics-description": "Рост выручки на 30% и конверсии на 40% за 6 месяцев.",
+        "hero-title": "Рост через осознанные решения",
+        "hero-description": "Мы создаем не шаблоны, а инструменты, адаптированные под вашему бизнесу. Наш подход — это глубокий анализ, прозрачность и измеримые результаты.",
+        "hero-cta": "Начало партнерства",
+        "services-title": "Инструменты для вашего успеха",
+        "service-audit-title": "Аналитика процессов",
+        "service-audit-description": "Погружаемся в ваш бизнес, чтобы найти точки роста. Никаких общих рекомендаций — только данные и конкретные шаги.",
+        "service-training-title": "Развитие команды",
+        "service-training-description": "Создаем программы обучения под вашу команду. Обеспечиваем поддержку, чтобы навыки работали на результат.",
+        "service-processes-title": "Оптимизация систем",
+        "service-processes-description": "Настройка процессов, которые дают результат. Все прозрачно и адаптировано под вас.",
+        "cases-title": "Истории совместного успеха",
+        "case-electronics-title": "Магазин электроники",
+        "case-electronics-description": "Анализировали воронку, создали кастомное обучение, внедрили KPI. Результат: сделки стали закрываться быстрее, а средний чек вырос.",
         "case-education-title": "Образовательная платформа",
-        "case-education-description": "Увеличение команды и рост конверсии на 35% за 3 месяца.",
+        "case-education-description": "Разработали программу подбора и подготовки. Сопровождали внедрение. Итог: команда выросла, а конверсия увеличилась.",
         "case-assol-title": "Компания ASSOL",
-        "case-assol-description": "Рост среднего чека на 40%, внедрение системы оценки качества, повышение оборота на 20-30% и создание обучающей системы.",
+        "case-assol-description": "Погрузились в бизнес, настроили оценку качества и оптимизацию. Чек-листы и менторство закрепили результаты: продажи выросли, команда эффективнее.",
         "case-bonnett-title": "Bonnett Enterprises",
-        "case-bonnett-description": "Создание системы бонусов, привлечение клиента с 317 апартаментами, рост чека на 25%, разработка сайта и мобильного приложения.",
+        "case-bonnett-description": "Создали бонусную систему, адаптированную под клиента. Поддерживали через задания и анализ. Итог: новый крупный клиент и рост выручки.",
         "philosophy-title": "Наша философия",
         "philosophy-intro": "Мы верим, что настоящий рост бизнеса возможен только через осознанный подход, конкретные инструменты и измеримые результаты. Вот принципы, которыми мы руководствуемся:",
         "philosophy-avoid-cliches-title": "Никаких шаблонов",
@@ -337,48 +348,48 @@
         "philosophy-transparency": "Мы объясняем, за что вы платите: подготовка, материалы, анализ. Никаких скрытых расходов или бесконечных уточнений.",
         "philosophy-responsibility-title": "Совместная ответственность",
         "philosophy-responsibility": "Обучение — не волшебная палочка. Мы даём инструменты, но успех зависит от вашей команды. Мы помогаем сделать шаг к изменениям, но результат — совместная работа.",
-        "contact-title": "Готовы к росту?",
-        "contact-description": "Оставьте заявку, и мы поможем вашему бизнесу выйти на новый уровень.",
+        "contact-title": "Начнем совместный путь?",
+        "contact-description": "Расскажите о вашем бизнесе, и мы подготовим индивидуальный план с прозрачными шагами и измеримым результатом.",
         "contact-email-label": "Ваш email:",
         "contact-email-placeholder": "Введите ваш email",
-        "contact-email-help": "Мы свяжемся с вами для обсуждения проекта.",
-        "contact-message-label": "Сообщение:",
-        "contact-message-placeholder": "Опишите ваш проект",
-        "contact-message-help": "Расскажите, как мы можем помочь вашему бизнесу.",
+        "contact-email-help": "Мы свяжемся, чтобы обсудить ваш проект.",
+        "contact-message-label": "О вашем бизнесе:",
+        "contact-message-placeholder": "Расскажите о ваших целях",
+        "contact-message-help": "Чем подробнее вы опишете задачу, тем точнее будет наш план.",
         "contact-submit": "Отправить",
         "footer": "© " + new Date().getFullYear() + " T-Solutions. Все права защищены."
       },
       en: {
-        title: "T-Solutions — Boosting Profits in Apple Style",
-        "meta-description": "T-Solutions helps businesses increase profits through audits, training, and sales process optimization.",
-        "og-title": "T-Solutions — Boosting Profits in Apple Style",
-        "og-description": "We create sales teams that change the game. Learn how we boost business profits!",
+        title: "T-Solutions — Tailored Solutions for Your Business",
+        "meta-description": "T-Solutions crafts bespoke solutions for business growth, rooted in deep analysis, transparency, and measurable outcomes.",
+        "og-title": "T-Solutions — Tailored Solutions for Your Business",
+        "og-description": "We don’t offer templates; we build tools tailored to your business. Discover our mindful, results-driven approach.",
         "og-url": "https://yourwebsite.com/en",
-        "twitter-title": "T-Solutions — Boosting Profits in Apple Style",
-        "twitter-description": "We create sales teams that change the game. Learn how we boost business profits!",
-        "nav-services": "Services",
-        "nav-cases": "Case Studies",
+        "twitter-title": "T-Solutions — Tailored Solutions",
+        "twitter-description": "We don’t offer templates; we build tools tailored to your business. Discover our mindful, results-driven approach.",
+        "nav-services": "Solutions",
+        "nav-cases": "Stories",
         "nav-philosophy": "Philosophy",
         "nav-contact": "Contact",
-        "hero-title": "We Create Sales Teams That Change the Game",
-        "hero-description": "We transform business processes into powerful tools for profit growth through analysis, training, and optimization.",
-        "hero-cta": "Get Started",
-        "services-title": "Our Solutions",
-        "service-audit-title": "Sales Audit",
-        "service-audit-description": "In-depth analysis of current processes to identify growth opportunities.",
-        "service-training-title": "Recruitment and Training",
-        "service-training-description": "Building teams that close deals with high conversion rates.",
-        "service-processes-title": "Efficient Processes",
-        "service-processes-description": "Optimizing business systems to increase profits.",
-        "cases-title": "Results That Speak for Themselves",
-        "case-electronics-title": "Electronics Online Store",
-        "case-electronics-description": "30% revenue growth and 40% conversion increase in 6 months.",
+        "hero-title": "Growth Through Mindful Solutions",
+        "hero-description": "We don’t create templates; we craft tools tailored to your business. Our approach is rooted in deep analysis, transparency, and measurable results.",
+        "hero-cta": "Start a Partnership",
+        "services-title": "Tools for Your Success",
+        "service-audit-title": "Process Insights",
+        "service-audit-description": "We dive into your business to uncover growth opportunities. No generic advice—just data-driven insights.",
+        "service-training-title": "Team Development",
+        "service-training-description": "We design training programs for your team, with ongoing support to ensure skills drive results.",
+        "service-processes-title": "System Optimization",
+        "service-processes-description": "We streamline processes that deliver measurable outcomes, tailored to your needs with full transparency.",
+        "cases-title": "Stories of Shared Success",
+        "case-electronics-title": "Electronics Retail",
+        "case-electronics-description": "Analyzed sales funnels, created custom training, and introduced KPIs. Result: faster deals and higher revenue per sale.",
         "case-education-title": "Educational Platform",
-        "case-education-description": "Team expansion and 35% conversion growth in 3 months.",
+        "case-education-description": "Developed a recruitment and training program with ongoing guidance. Outcome: a larger team and improved conversions.",
         "case-assol-title": "ASSOL Company",
-        "case-assol-description": "40% increase in average order value, quality assessment system implementation, 20-30% turnover growth, and training system creation.",
+        "case-assol-description": "Immersed in their operations, implemented quality assessments and training. Checklists and mentoring boosted sales and efficiency.",
         "case-bonnett-title": "Bonnett Enterprises",
-        "case-bonnett-description": "Bonus system creation, acquisition of a client with 317 apartments, 25% order value increase, website and mobile app development.",
+        "case-bonnett-description": "Designed a tailored bonus system, supported implementation with tasks and analysis. Result: a major new client and revenue growth.",
         "philosophy-title": "Our Philosophy",
         "philosophy-intro": "We believe true business growth comes from a mindful approach, specific tools, and measurable results. Here are the principles we follow:",
         "philosophy-avoid-cliches-title": "No One-Size-Fits-All Solutions",
@@ -395,48 +406,48 @@
         "philosophy-transparency": "We explain what you’re paying for: preparation, materials, analysis. No hidden costs or endless clarification emails.",
         "philosophy-responsibility-title": "Shared Responsibility",
         "philosophy-responsibility": "Training isn’t a magic wand. We provide tools, but success depends on your team. We help you take steps toward change, but results are a joint effort.",
-        "contact-title": "Ready to Grow?",
-        "contact-description": "Submit a request, and we’ll help your business reach the next level.",
+        "contact-title": "Ready to Begin Together?",
+        "contact-description": "Tell us about your business, and we’ll craft a tailored plan with clear steps and measurable outcomes.",
         "contact-email-label": "Your email:",
         "contact-email-placeholder": "Enter your email",
-        "contact-email-help": "We’ll contact you to discuss your project.",
-        "contact-message-label": "Message:",
-        "contact-message-placeholder": "Describe your project",
-        "contact-message-help": "Tell us how we can help your business.",
-        "contact-submit": "Submit",
+        "contact-email-help": "We’ll reach out to discuss your project.",
+        "contact-message-label": "About your business:",
+        "contact-message-placeholder": "Share your goals",
+        "contact-message-help": "The more you tell us, the more precise our plan will be.",
+        "contact-submit": "Send",
         "footer": "© " + new Date().getFullYear() + " T-Solutions. All rights reserved."
       },
       fr: {
-        title: "T-Solutions — Augmenter les profits à la manière d'Apple",
-        "meta-description": "T-Solutions aide les entreprises à augmenter leurs profits grâce à des audits, des formations et l'optimisation des processus de vente.",
-        "og-title": "T-Solutions — Augmenter les profits à la manière d'Apple",
-        "og-description": "Nous créons des équipes de vente qui changent la donne. Découvrez comment nous boostons les profits des entreprises !",
+        title: "T-Solutions — Des solutions sur mesure pour votre entreprise",
+        "meta-description": "T-Solutions crée des solutions sur mesure pour la croissance des entreprises, basées sur une analyse approfondie, la transparence et des résultats mesurables.",
+        "og-title": "T-Solutions — Des solutions sur mesure pour votre entreprise",
+        "og-description": "Nous ne proposons pas de modèles, mais des outils adaptés à votre entreprise. Découvrez notre approche consciente et axée sur les résultats.",
         "og-url": "https://yourwebsite.com/fr",
-        "twitter-title": "T-Solutions — Augmenter les profits à la manière d'Apple",
-        "twitter-description": "Nous créons des équipes de vente qui changent la donne. Découvrez comment nous boostons les profits des entreprises !",
-        "nav-services": "Services",
-        "nav-cases": "Études de cas",
+        "twitter-title": "T-Solutions — Des solutions sur mesure",
+        "twitter-description": "Nous ne proposons pas de modèles, mais des outils adaptés à votre entreprise. Découvrez notre approche consciente et axée sur les résultats.",
+        "nav-services": "Solutions",
+        "nav-cases": "Histoires",
         "nav-philosophy": "Philosophie",
         "nav-contact": "Contact",
-        "hero-title": "Nous créons des équipes de vente qui changent la donne",
-        "hero-description": "Nous transformons les processus d'entreprise en outils puissants pour la croissance des profits grâce à l'analyse, la formation et l'optimisation.",
-        "hero-cta": "Commencer maintenant",
-        "services-title": "Nos solutions",
-        "service-audit-title": "Audit des ventes",
-        "service-audit-description": "Analyse approfondie des processus actuels pour identifier les opportunités de croissance.",
-        "service-training-title": "Recrutement et formation",
-        "service-training-description": "Création d'équipes qui concluent des transactions avec un taux de conversion élevé.",
-        "service-processes-title": "Processus efficaces",
-        "service-processes-description": "Optimisation des systèmes d'entreprise pour augmenter les profits.",
-        "cases-title": "Des résultats qui parlent d'eux-mêmes",
-        "case-electronics-title": "Magasin d'électronique en ligne",
-        "case-electronics-description": "Augmentation de 30 % du chiffre d'affaires et de 40 % du taux de conversion en 6 mois.",
+        "hero-title": "Croissance grâce à des solutions conscientes",
+        "hero-description": "Nous ne créons pas de modèles, mais des outils adaptés à votre entreprise. Notre approche repose sur une analyse approfondie, la transparence et des résultats mesurables.",
+        "hero-cta": "Démarrer un partenariat",
+        "services-title": "Outils pour votre réussite",
+        "service-audit-title": "Analyse des processus",
+        "service-audit-description": "Nous plongeons dans votre entreprise pour identifier les opportunités de croissance. Pas de conseils génériques, seulement des données et des étapes concrètes.",
+        "service-training-title": "Développement d'équipe",
+        "service-training-description": "Nous concevons des programmes de formation pour votre équipe, avec un accompagnement pour garantir que les compétences produisent des résultats.",
+        "service-processes-title": "Optimisation des systèmes",
+        "service-processes-description": "Nous optimisons les processus pour des résultats mesurables, adaptés à vos besoins avec une totale transparence.",
+        "cases-title": "Histoires de succès partagé",
+        "case-electronics-title": "Commerce d'électronique",
+        "case-electronics-description": "Analysé l'entonnoir de vente, créé une formation sur mesure et introduit des KPI. Résultat : des transactions plus rapides et un panier moyen plus élevé.",
         "case-education-title": "Plateforme éducative",
-        "case-education-description": "Expansion de l'équipe et augmentation de 35 % du taux de conversion en 3 mois.",
+        "case-education-description": "Développé un programme de recrutement et de formation avec un accompagnement. Résultat : une équipe élargie et des conversions améliorées.",
         "case-assol-title": "Entreprise ASSOL",
-        "case-assol-description": "Augmentation de 40 % du panier moyen, mise en place d'un système d'évaluation de la qualité, croissance du chiffre d'affaires de 20-30 % et création d'un système de formation.",
+        "case-assol-description": "Plongé dans leurs opérations, mis en place des évaluations de qualité et des formations. Listes de contrôle et mentorat ont boosté les ventes et l'efficacité.",
         "case-bonnett-title": "Bonnett Enterprises",
-        "case-bonnett-description": "Création d'un système de bonus, acquisition d'un client avec 317 appartements, augmentation de 25 % du panier moyen, développement d'un site web et d'une application mobile.",
+        "case-bonnett-description": "Conçu un système de bonus adapté au client, soutenu par des tâches et des analyses. Résultat : un nouveau client majeur et une croissance du chiffre d'affaires.",
         "philosophy-title": "Notre philosophie",
         "philosophy-intro": "Nous croyons que la véritable croissance des entreprises repose sur une approche consciente, des outils spécifiques et des résultats mesurables. Voici les principes qui nous guident :",
         "philosophy-avoid-cliches-title": "Pas de solutions universelles",
@@ -453,14 +464,14 @@
         "philosophy-transparency": "Nous expliquons ce pour quoi vous payez : préparation, matériel, analyse. Pas de coûts cachés ni d’échanges interminables pour clarifications.",
         "philosophy-responsibility-title": "Responsabilité partagée",
         "philosophy-responsibility": "La formation n’est pas une baguette magique. Nous fournissons des outils, mais le succès dépend de votre équipe. Nous vous aidons à avancer vers le changement, mais les résultats sont un effort commun.",
-        "contact-title": "Prêt à croître ?",
-        "contact-description": "Envoyez une demande, et nous aiderons votre entreprise à passer au niveau supérieur.",
+        "contact-title": "Prêts à commencer ensemble ?",
+        "contact-description": "Parlez-nous de votre entreprise, et nous concevrons un plan sur mesure avec des étapes claires et des résultats mesurables.",
         "contact-email-label": "Votre email :",
         "contact-email-placeholder": "Entrez votre email",
         "contact-email-help": "Nous vous contacterons pour discuter de votre projet.",
-        "contact-message-label": "Message :",
-        "contact-message-placeholder": "Décrivez votre projet",
-        "contact-message-help": "Dites-nous comment nous pouvons aider votre entreprise.",
+        "contact-message-label": "À propos de votre entreprise :",
+        "contact-message-placeholder": "Partagez vos objectifs",
+        "contact-message-help": "Plus vous nous en dites, plus notre plan sera précis.",
         "contact-submit": "Envoyer",
         "footer": "© " + new Date().getFullYear() + " T-Solutions. Tous droits réservés."
       }
@@ -557,4 +568,3 @@
   </script>
 </body>
 </html>
-```
